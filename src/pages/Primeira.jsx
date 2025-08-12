@@ -1,6 +1,6 @@
 import './Primeira.scss'
 import React from 'react';
-import { useCarousel, originalSlides } from '../useCarousel';
+import { useCarousel, originalSlides } from './useCarousel';
 
 export default function Primeira(){
 
@@ -113,7 +113,7 @@ export default function Primeira(){
                         ))}
                     </div>
                 </div>
-                <script src='script.js'></script>
+               
             </main>
         </>
     )
