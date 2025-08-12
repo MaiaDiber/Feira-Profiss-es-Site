@@ -10,7 +10,7 @@ export default function Primeira(){
     5ª Feira de Profissões
     </h1>
     <h2 className='subquinta'>
-Instítuto Social nossa Senhora de Fátima
+Instítuto Social nossa Sra de Fátima
     </h2>
     <div className='divtitle'>
     <h1 className='title'>
