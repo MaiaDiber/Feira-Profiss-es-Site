@@ -1,4 +1,6 @@
-const originalSlides = [
+import { useState, useEffect, useRef } from 'react';
+
+export const originalSlides = [
   {
       img: "https://static.nationalgeographicbrasil.com/files/styles/image_3200/public/01-proboscis-monkey-NationalGeographic_2684060.webp?w=1600&h=1067",
       title: "Equipe Unida",
@@ -31,254 +33,147 @@ const originalSlides = [
   }
 ];
 
-let currentSlide = 0;
-let totalSlides = originalSlides.length;
-let autoplayInterval;
-let isAutoplayActive = true;
-const autoplayDelay = 4000;
+export function useCarousel() {
+    // Estados e refs
+    const [currentSlide, setCurrentSlide] = useState(5);
+    const [isAutoplayActive, setIsAutoplayActive] = useState(true);
+    const autoplayInterval = useRef(null);
+    const wrapperRef = useRef(null);
+    
+    // Configurações
+    const totalSlides = originalSlides.length;
+    const cloneCount = 5;
+    const autoplayDelay = 4000;
 
-// Criar slides infinitos
-function createInfiniteSlides() {
-  const wrapper = document.getElementById('carouselWrapper');
-  
-  // Criar slides com mais clones para mostrar imagens dos dois lados sempre
-  const cloneCount = 5;
-  const allSlides = [
-      ...originalSlides.slice(-cloneCount), // últimos slides no início
-      ...originalSlides,                     // slides originais
-      ...originalSlides.slice(0, cloneCount) // primeiros slides no final
-  ];
-  
-  allSlides.forEach((slide, index) => {
-      const slideElement = document.createElement('div');
-      slideElement.className = 'carousel-slide';
-      slideElement.onclick = () => goToSlideByClick(index);
-      
-      slideElement.innerHTML = `
-          <img src="${slide.img}" alt="${slide.title}">
-          <div class="slide-overlay">
-              <div class="slide-title">${slide.title}</div>
-              <div class="slide-description">${slide.description}</div>
-          </div>
-      `;
-      wrapper.appendChild(slideElement);
-  });
-  
-  // Posicionar no primeiro slide real com mais clones
-  currentSlide = cloneCount;
-  updateCarouselPosition();
+    // Criar slides com clones para efeito infinito
+    const allSlides = [
+        ...originalSlides.slice(-cloneCount),
+        ...originalSlides,
+        ...originalSlides.slice(0, cloneCount)
+    ];
+
+    // Funções
+    const updateCarouselPosition = () => {
+        if (wrapperRef.current) {
+            const slideWidth = 330;
+            const centerOffset = (wrapperRef.current.parentElement.offsetWidth / 2) - (slideWidth / 2);
+            wrapperRef.current.style.transform = `translateX(${centerOffset - (currentSlide * slideWidth)}px)`;
+        }
+    };
+
+    const getRealSlideIndex = () => {
+        if (currentSlide >= cloneCount && currentSlide < cloneCount + totalSlides) {
+            return currentSlide - cloneCount;
+        } else if (currentSlide < cloneCount) {
+            return totalSlides - (cloneCount - currentSlide);
+        } else {
+            return currentSlide - totalSlides - cloneCount;
+        }
+    };
+
+    const nextSlide = () => {
+        const maxSlides = totalSlides + 10;
+        
+        setCurrentSlide(prev => {
+            const newSlide = prev + 1;
+            
+            if (newSlide >= maxSlides - cloneCount) {
+                setTimeout(() => {
+                    if (wrapperRef.current) {
+                        wrapperRef.current.style.transition = 'none';
+                        setCurrentSlide(cloneCount);
+                        
+                        setTimeout(() => {
+                            if (wrapperRef.current) {
+                                wrapperRef.current.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                            }
+                        }, 50);
+                    }
+                }, 600);
+            }
+            
+            return newSlide;
+        });
+    };
+
+    const previousSlide = () => {
+        setCurrentSlide(prev => {
+            const newSlide = prev - 1;
+            
+            if (newSlide < cloneCount) {
+                setTimeout(() => {
+                    if (wrapperRef.current) {
+                        wrapperRef.current.style.transition = 'none';
+                        setCurrentSlide(totalSlides + cloneCount - 1);
+                        
+                        setTimeout(() => {
+                            if (wrapperRef.current) {
+                                wrapperRef.current.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                            }
+                        }, 50);
+                    }
+                }, 600);
+            }
+            
+            return newSlide;
+        });
+    };
+
+    const goToSlide = (index) => {
+        setCurrentSlide(index + cloneCount);
+    };
+
+    const goToSlideByClick = (index) => {
+        setCurrentSlide(index);
+    };
+
+    const startAutoplay = () => {
+        autoplayInterval.current = setInterval(nextSlide, autoplayDelay);
+    };
+
+    const stopAutoplay = () => {
+        if (autoplayInterval.current) {
+            clearInterval(autoplayInterval.current);
+        }
+    };
+
+    // Effects
+    useEffect(() => {
+        if (isAutoplayActive) {
+            startAutoplay();
+        } else {
+            stopAutoplay();
+        }
+
+        return () => stopAutoplay();
+    }, [isAutoplayActive]);
+
+    useEffect(() => {
+        updateCarouselPosition();
+    }, [currentSlide]);
+
+    useEffect(() => {
+        const handleResize = () => {
+            updateCarouselPosition();
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    // Retornar tudo que o componente precisa
+    return {
+        currentSlide,
+        wrapperRef,
+        allSlides,
+        originalSlides,
+        isAutoplayActive,
+        nextSlide,
+        previousSlide,
+        goToSlide,
+        goToSlideByClick,
+        getRealSlideIndex,
+        startAutoplay,
+        stopAutoplay
+    };
 }
-
-// Ir para slide clicado
-function goToSlideByClick(index) {
-  currentSlide = index;
-  updateCarouselPosition();
-}
-
-// Criar indicadores
-function createIndicators() {
-  const indicatorsContainer = document.getElementById('indicators');
-  for (let i = 0; i < totalSlides; i++) {
-      const indicator = document.createElement('div');
-      indicator.className = i === 0 ? 'indicator active' : 'indicator';
-      indicator.onclick = () => goToSlide(i);
-      indicatorsContainer.appendChild(indicator);
-  }
-}
-
-// Atualizar posição do carrossel
-function updateCarouselPosition() {
-  const wrapper = document.getElementById('carouselWrapper');
-  const slideWidth = 330; // 300px + 30px margin
-  const centerOffset = (wrapper.parentElement.offsetWidth / 2) - (slideWidth / 2);
-  
-  wrapper.style.transform = `translateX(${centerOffset - (currentSlide * slideWidth)}px)`;
-  
-  updateSlideStates();
-  updateIndicators();
-}
-
-// Atualizar estados dos slides
-function updateSlideStates() {
-  const allSlides = document.querySelectorAll('.carousel-slide');
-  
-  allSlides.forEach((slide, index) => {
-      slide.classList.remove('active', 'adjacent');
-      
-      if (index === currentSlide) {
-          slide.classList.add('active');
-      } else if (index === currentSlide - 1 || index === currentSlide + 1) {
-          slide.classList.add('adjacent');
-      }
-  });
-}
-
-// Atualizar indicadores
-function updateIndicators() {
-  const indicators = document.querySelectorAll('.indicator');
-  const realSlideIndex = getRealSlideIndex();
-  
-  indicators.forEach((indicator, index) => {
-      indicator.classList.toggle('active', index === realSlideIndex);
-  });
-}
-
-// Obter índice do slide real
-function getRealSlideIndex() {
-  const cloneCount = 5;
-  if (currentSlide >= cloneCount && currentSlide < cloneCount + totalSlides) {
-      return currentSlide - cloneCount;
-  } else if (currentSlide < cloneCount) {
-      return totalSlides - (cloneCount - currentSlide);
-  } else {
-      return currentSlide - totalSlides - cloneCount;
-  }
-}
-
-// Próximo slide
-function nextSlide() {
-  const wrapper = document.getElementById('carouselWrapper');
-  const maxSlides = totalSlides + 10; // slides originais + 10 clones
-  const cloneCount = 5;
-  
-  currentSlide++;
-  
-  if (currentSlide >= maxSlides - cloneCount) {
-      updateCarouselPosition();
-      
-      setTimeout(() => {
-          wrapper.classList.add('no-transition');
-          currentSlide = cloneCount;
-          updateCarouselPosition();
-          
-          setTimeout(() => {
-              wrapper.classList.remove('no-transition');
-          }, 50);
-      }, 600);
-  } else {
-      updateCarouselPosition();
-  }
-}
-
-// Slide anterior
-function previousSlide() {
-  const wrapper = document.getElementById('carouselWrapper');
-  const cloneCount = 5;
-  
-  currentSlide--;
-  
-  if (currentSlide < cloneCount) {
-      updateCarouselPosition();
-      
-      setTimeout(() => {
-          wrapper.classList.add('no-transition');
-          currentSlide = totalSlides + cloneCount - 1;
-          updateCarouselPosition();
-          
-          setTimeout(() => {
-              wrapper.classList.remove('no-transition');
-          }, 50);
-      }, 600);
-  } else {
-      updateCarouselPosition();
-  }
-}
-
-// Ir para slide específico
-function goToSlide(index) {
-  currentSlide = index + 5; // +5 por causa dos clones iniciais
-  updateCarouselPosition();
-}
-
-// Controles de autoplay
-function startAutoplay() {
-  autoplayInterval = setInterval(nextSlide, autoplayDelay);
-}
-
-function stopAutoplay() {
-  clearInterval(autoplayInterval);
-}
-
-
-
-// Reiniciar carrossel
-function resetCarousel() {
-  const wrapper = document.getElementById('carouselWrapper');
-  wrapper.classList.add('no-transition');
-  currentSlide = 5;
-  updateCarouselPosition();
-  
-  setTimeout(() => {
-      wrapper.classList.remove('no-transition');
-  }, 50);
-}
-
-// Pausar ao passar mouse
-const carousel = document.getElementById('carousel');
-carousel.addEventListener('mouseenter', () => {
-  if (isAutoplayActive) {
-      stopAutoplay();
-  }
-});
-
-carousel.addEventListener('mouseleave', () => {
-  if (isAutoplayActive) {
-      startAutoplay();
-  }
-});
-
-// Controle por teclado
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'ArrowLeft') {
-      previousSlide();
-  } else if (e.key === 'ArrowRight') {
-      nextSlide();
-  } else if (e.key === ' ') {
-      e.preventDefault();
-      toggleAutoplay();
-  }
-});
-
-// Redimensionar carrossel quando a janela mudar
-window.addEventListener('resize', () => {
-  updateCarouselPosition();
-});
-
-// Suporte a touch/swipe
-let startX = 0;
-let endX = 0;
-
-carousel.addEventListener('touchstart', (e) => {
-  startX = e.touches[0].clientX;
-}, { passive: true });
-
-carousel.addEventListener('touchend', (e) => {
-  endX = e.changedTouches[0].clientX;
-  const diff = startX - endX;
-  
-  if (Math.abs(diff) > 50) {
-      if (diff > 0) {
-          nextSlide();
-      } else {
-          previousSlide();
-      }
-  }
-}, { passive: true });
-
-// Inicializar
-createInfiniteSlides();
-createIndicators();
-startAutoplay();
-
-// Animação de entrada
-window.addEventListener('load', () => {
-  const container = document.querySelector('.carousel-container');
-  container.style.opacity = '0';
-  container.style.transform = 'translateY(30px)';
-  
-  setTimeout(() => {
-      container.style.transition = 'all 0.8s ease';
-      container.style.opacity = '1';
-      container.style.transform = 'translateY(0)';
-  }, 100);
-});
