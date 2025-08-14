@@ -43,23 +43,23 @@ export default function Primeira(){
         <input type="radio" name='radio-btn' id='radio5'/>
 
         <div className="slide primeiro">
-            <img src="" alt="img1" style={"background-color: blue;"}/>
+            <img src="" alt="img1" />
         </div>
 
         <div className="slide">
-            <img src="" alt="img2" style={"background-color: gray;"}/>
+            <img src="" alt="img2" />
         </div>
 
         <div className="slide">
-            <img src="" alt="img3" style={"background-color: green;"}/>
+            <img src="" alt="img3" />
         </div>
 
         <div className="slide">
-            <img src="" alt="img4" style={"background-color: pink;"}/>
+            <img src="" alt="img4" />
         </div>
 
         <div className="slide">
-            <img src="" alt="img5" style={"background-color: black;"}/>
+            <img src="" alt="img5"/>
         </div>
 
         <div className="navigation-auto">
