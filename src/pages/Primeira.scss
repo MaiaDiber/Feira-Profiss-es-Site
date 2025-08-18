@@ -1,72 +1,75 @@
 *{
- margin: 0;
+    margin: 0;
     padding: 0;
 }
 
 body{
     height: 100%;
     width: 100%;
-    
 }
 
-    header {
-        width: 100%;
-        height: 400px;
-        background: linear-gradient(to bottom, #50B5E1 15%, #80CEF1 30%, #A3E1FC 40%, #D6F3FF 50%, #FFFFFF 60%);
-        display: flex;
-        gap: 200px;
-        
-        
-        .infofrei{
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: -100px;
-            }
-
-            .feira3{
-                margin-top: -200px;
-            }
-   .imgfrei{
-    width: 120px;
-    height: 140px;
-    padding: 50px;
-   }
-   .imgfrei2{
-    width: 150px;
-    height: 150px;
-    padding: 240px 50px;
-   }
-
-   .quinta{
-    color: #FFFFFF;
-    font-family: Arial, Helvetica, sans-serif;
-   }
-   .subquinta{
-    color: #FFFFFF;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 23px;
-    margin-top: -20px;
-   }
-   .divtitle{
+header {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(to bottom, #50B5E1 15%, #80CEF1 30%, #A3E1FC 40%, #D6F3FF 50%, #FFFFFF 60%);
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 400px;
-    height: 100px;
-    background-color: #F29F05;
-   }
-   .title{
-    color: #FFFFFF;
-    font-family: Arial, Helvetica, sans-serif;
-    
-   }
-   p{
-    margin-top: -20px;
-    font-size: 16px;
-   }
+    gap: 200px;
+
+    .infofrei{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: -100px;
+    }
+
+    .feira3{
+        margin-top: -200px;
+    }
+
+    .imgfrei{
+        width: 120px;
+        height: 140px;
+        padding: 50px;
+    }
+
+    .imgfrei2{
+        width: 150px;
+        height: 150px;
+        padding: 240px 50px;
+    }
+
+    .quinta{
+        color: #FFFFFF;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .subquinta{
+        color: #FFFFFF;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 23px;
+        margin-top: -20px;
+    }
+
+    .divtitle{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 400px;
+        height: 100px;
+        background-color: #F29F05;
+    }
+
+    .title{
+        color: #FFFFFF;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    p{
+        margin-top: -20px;
+        font-size: 16px;
+    }
 }
 
 main{
@@ -74,63 +77,112 @@ main{
     justify-content: center;
     align-items: center;
 
-    .slider{
-        margin: 0 auto;
-        width: 800px;
-        height: 400px;
-        overflow: hidden;
-
-    }
-    .slides{
-        width: 400%;
-        height: 400px;
+    .slider-container{
+        margin-top: -100px;
+        position: relative;
         display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
     }
+
+    .slider{
+        width: 650px;
+        height: 300px;
+        overflow: hidden;
+        border: 1px solid black;
+        position: relative;
+    }
+
+    .slides{
+        width: 500%;
+        height: 100%;
+        display: flex;
+        margin: 0 auto;
+        position: relative;
+    }
+
     .slides input{
         display: none;
     }
+
     .slide{
-        width: 25%;
+        width: 20%;
         position: relative;
-
+        transition: 2s;
+        height: 400px;
+        margin-top: 100px;
     }
+
     .slide img{
-        width: 800px;
-    }
-    .manual-navigation{
-        position: absolute;
-        width: 800px;
-        display: flex;
-        justify-content: center;
-    }
-    .manual-btn{
-        border: 2px solid rgb(0, 0, 0);
-        padding: 5px;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: 1s;
+        width: 1000px;
+        height: 100%;
+        object-fit: cover;
     }
 
-    .manual-btn:not(:Last-child){
-        margin-right: 40px;
+    .img1, .img2, .img3, .img4, .img5{
+        margin-top: -100px;
+        margin-left: -50px;
     }
-    .manual-btn:hover{
-        background-color: rgb(15, 12, 12);
+
+    // Estilos das setas - ajustando posicionamento
+    .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        font-size: 30px;
+        font-weight: bold;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        &:active {
+            transform: translateY(-50%) scale(0.95);
+        }
     }
+
+    .arrow-prev {
+        left: 0px;
+    }
+
+    .arrow-next {
+        right: -10px;
+        
+    }
+
+
     #radio1:checked ~ .primeiro{
-        margin-left: 0;
+        margin-left: -2%;
     }
+
     #radio2:checked ~ .primeiro{
-        margin-left: -25%;
+        margin-left: -21.5%;
     }
+
     #radio3:checked ~ .primeiro{
-        margin-left: -50%;
+        margin-left: -41.55%;
     }
+
     #radio4:checked ~ .primeiro{
-        margin-left: -75%;
+        margin-left: -62.5%;
     }
+
     #radio5:checked ~ .primeiro{
-        margin-left: -100%;
+        margin-left: -83%;
     }
 
     .navigation-auto div{
@@ -143,31 +195,12 @@ main{
 
     .navigation-auto{
         position: absolute;
-        width: 800px;
-        margin-top: 360px;
+        width: 100%;
+        bottom: -40px;
         display: flex;
         justify-content: center;
+        gap: 40px;
+        z-index: 50;
     }
-
-    .navigation-auto div:not(:last-child){
-        margin-right: 40px;
-    }
-
-    #radio1:checked ~ .navigation-auto .auto-btn1{
-        background-color: #000000;
-    }
-    #radio2:checked ~ .navigation-auto .auto-btn2{
-        background-color: #000000;
-    }
-    #radio3:checked ~ .navigation-auto .auto-btn3{
-        background-color: #000000;
-    }
-    #radio4:checked ~ .navigation-auto .auto-btn4{
-        background-color: #000000;
-    }
-    #radio5:checked ~ .navigation-auto .auto-btn5{
-        background-color: #000000;
-    }
+    
 }
-
-

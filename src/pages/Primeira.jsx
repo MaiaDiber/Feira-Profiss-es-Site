@@ -1,8 +1,13 @@
-import './Primeira.scss'
+import { useEffect } from "react";
+import slides from './scipts.js'
+import "./Primeira.scss";
 
-
-export default function Primeira(){
-
+export default function Primeira() {
+  useEffect(() => {
+    const startSlider = slides();
+    startSlider();
+  }, []);
+    
     return(
         <>
             <header>
@@ -32,57 +37,58 @@ export default function Primeira(){
 
            <main>
 
-        <section className='slider'>
+        <section className='slider-container'>
+            <div className='slider'>
+                <div className='slides'>
 
-       <div className='slides'>
+                    <input type="radio" name='radio-btn' id='radio1'/>
+                    <input type="radio" name='radio-btn' id='radio2'/>
+                    <input type="radio" name='radio-btn' id='radio3'/>
+                    <input type="radio" name='radio-btn' id='radio4'/>
+                    <input type="radio" name='radio-btn' id='radio5'/>
 
-        <input type="radio" name='radio-btn' id='radio1'/>
-        <input type="radio" name='radio-btn' id='radio2'/>
-        <input type="radio" name='radio-btn' id='radio3'/>
-        <input type="radio" name='radio-btn' id='radio4'/>
-        <input type="radio" name='radio-btn' id='radio5'/>
+                    <div className="slide primeiro">
+                        <img className='img1' src="/public/13_08_2025 16_14_00.png" alt="img1" />
+                    </div>
 
-        <div className="slide primeiro">
-            <img src="" alt="img1" />
-        </div>
+                    <div className="slide">
+                        <img className='img2' src="/public/13_08_2025 16_07_31.png" alt="img2"/>
+                    </div>
 
-        <div className="slide">
-            <img src="" alt="img2" />
-        </div>
+                    <div className="slide">
+                        <img className='img3' src="/public/13_08_2025 16_10_04.png" alt="img3"/>
+                    </div>
 
-        <div className="slide">
-            <img src="" alt="img3" />
-        </div>
+                    <div className="slide">
+                        <img className='img4' src="/public/13_08_2025 16_11_35.png" alt="img4"/>
+                    </div>
 
-        <div className="slide">
-            <img src="" alt="img4" />
-        </div>
+                    <div className="slide">
+                        <img className='img5' src="/public/13_08_2025 16_12_50.png" alt="img5"/>
+                    </div>
 
-        <div className="slide">
-            <img src="" alt="img5"/>
-        </div>
+                </div>
 
-        <div className="navigation-auto">
-            <div className="auto-btn1"></div>
-            <div className="auto-btn2"></div>
-            <div className="auto-btn3"></div>
-            <div className="auto-btn4"></div>
-            <div className="auto-btn5"></div>
-        </div>
+               
+                <button className="arrow arrow-prev">‹</button>
+                <button className="arrow arrow-next">›</button>
+            </div>
 
-       </div>
+            
+            <div className="navigation-auto">
+                <div className="auto-btn1"></div>
+                <div className="auto-btn2"></div>
+                <div className="auto-btn3"></div>
+                <div className="auto-btn4"></div>
+                <div className="auto-btn5"></div>
+            </div>
 
-       <div className="manual-navigation">
-        <label htmlFor="radio1" className='manual-btn'></label>
-        <label htmlFor="radio2" className='manual-btn'></label>
-        <label htmlFor="radio3" className='manual-btn'></label>
-        <label htmlFor="radio4" className='manual-btn'></label>
-        <label htmlFor="radio5" className='manual-btn'></label>
-       </div>
+            
+            
 
         </section>
 
-        <script src='useCarousel.js'></script>
+       
            </main>
         </>
     )
