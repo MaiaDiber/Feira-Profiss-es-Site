@@ -19,23 +19,19 @@ export default function Primeira() {
                     <img className='imgfrei' src="/public/imgfrei2.svg-removebg-preview.png" alt="Logo"  />
                 </div>
                 <div className="feira3 infofrei">
-                    <h1 className='quinta'>
-                        5ª Feira de Profissões
-                    </h1>
+                    <div className="primtitulo">
+                        <h1 className="quinta2">5ª</h1>
+                    <h1 className='quinta'>Feira de Profissões</h1>
+                    </div>
+                    <div className="linha"></div>
                     <h2 className='subquinta'>
                         Instituto Social nossa Senhora de Fátima
                     </h2>
-                    <div className='divtitle'>
-                        <h1 className='title'>
-                            Feira de Profissões
-                        </h1>
-                    </div>
-                    <p>
-                        <em><strong>"Esforço que transforma, e o orgulho permanece"</strong></em>
-                    </p>
+                    
                 </div>
-                <div className="feira3">
-                    <img className='imgfrei2' src="/public/imgfrei.svg-removebg-preview.png" alt="Logo"  />
+                <div className="feira3 nucleo-orbita">
+                    <img className='nucleo' src="/public/nucleo.png" alt=""  />
+                    <img className="orbita" src="/public/orbita.png" alt="" />
                 </div>
             </header>
 
@@ -83,6 +79,10 @@ export default function Primeira() {
                         <div className="auto-btn5"></div>
                     </div>
                 </section>
+
+                <div className="emotion">
+                        <p className="textemotion">ESFORÇO que tranforma, e o ORGULHO permanece</p>
+                    </div>
            </main>
         </>
     )
