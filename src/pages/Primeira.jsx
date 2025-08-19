@@ -4,8 +4,12 @@ import "./Primeira.scss";
 
 export default function Primeira() {
   useEffect(() => {
-    const startSlider = slides();
-    startSlider();
+    const timer = setTimeout(() => {
+      const startSlider = slides();
+      startSlider();
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, []);
     
     return(
@@ -36,59 +40,49 @@ export default function Primeira() {
             </header>
 
            <main>
+                <section className='slider-container'>
+                    <div className='slider'>
+                        <div className='slides'>
+                            <input type="radio" name='radio-btn' id='radio1'/>
+                            <input type="radio" name='radio-btn' id='radio2'/>
+                            <input type="radio" name='radio-btn' id='radio3'/>
+                            <input type="radio" name='radio-btn' id='radio4'/>
+                            <input type="radio" name='radio-btn' id='radio5'/>
 
-        <section className='slider-container'>
-            <div className='slider'>
-                <div className='slides'>
+                            <div className="slide primeiro">
+                                <img className='img1' src="/public/13_08_2025 16_14_00.png" alt="img1" />
+                            </div>
 
-                    <input type="radio" name='radio-btn' id='radio1'/>
-                    <input type="radio" name='radio-btn' id='radio2'/>
-                    <input type="radio" name='radio-btn' id='radio3'/>
-                    <input type="radio" name='radio-btn' id='radio4'/>
-                    <input type="radio" name='radio-btn' id='radio5'/>
+                            <div className="slide">
+                                <img className='img2' src="/public/13_08_2025 16_07_31.png" alt="img2"/>
+                            </div>
 
-                    <div className="slide primeiro">
-                        <img className='img1' src="/public/13_08_2025 16_14_00.png" alt="img1" />
+                            <div className="slide">
+                                <img className='img3' src="/public/13_08_2025 16_10_04.png" alt="img3"/>
+                            </div>
+
+                            <div className="slide">
+                                <img className='img4' src="/public/13_08_2025 16_11_35.png" alt="img4"/>
+                            </div>
+
+                            <div className="slide">
+                                <img className='img5' src="/public/13_08_2025 16_12_50.png" alt="img5"/>
+                            </div>
+                        </div>
                     </div>
 
-                    <div className="slide">
-                        <img className='img2' src="/public/13_08_2025 16_07_31.png" alt="img2"/>
+                    {/* Setas fora do slider */}
+                    <button className="arrow arrow-prev" type="button">‹</button>
+                    <button className="arrow arrow-next" type="button">›</button>
+
+                    <div className="navigation-auto">
+                        <div className="auto-btn1"></div>
+                        <div className="auto-btn2"></div>
+                        <div className="auto-btn3"></div>
+                        <div className="auto-btn4"></div>
+                        <div className="auto-btn5"></div>
                     </div>
-
-                    <div className="slide">
-                        <img className='img3' src="/public/13_08_2025 16_10_04.png" alt="img3"/>
-                    </div>
-
-                    <div className="slide">
-                        <img className='img4' src="/public/13_08_2025 16_11_35.png" alt="img4"/>
-                    </div>
-
-                    <div className="slide">
-                        <img className='img5' src="/public/13_08_2025 16_12_50.png" alt="img5"/>
-                    </div>
-
-                </div>
-
-               
-                <button className="arrow arrow-prev">‹</button>
-                <button className="arrow arrow-next">›</button>
-            </div>
-
-            
-            <div className="navigation-auto">
-                <div className="auto-btn1"></div>
-                <div className="auto-btn2"></div>
-                <div className="auto-btn3"></div>
-                <div className="auto-btn4"></div>
-                <div className="auto-btn5"></div>
-            </div>
-
-            
-            
-
-        </section>
-
-       
+                </section>
            </main>
         </>
     )
