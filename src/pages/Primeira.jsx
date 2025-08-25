@@ -1,3 +1,5 @@
+
+import { Link } from "react-router";
 import { useEffect } from "react";
 import slides from './scipts.js'
 import "./Primeira.scss";
@@ -12,9 +14,41 @@ export default function Primeira() {
     return () => clearTimeout(timer);
   }, []);
     
+  
+
     return(
         <>
+
             <header>
+                <section className="info-header">
+                    <div className="underline-textos">
+                    <div className="underline">
+                        <Link to={'/segunda'} className="argumentos">Andares</Link>
+            
+                    </div>
+                    <div className="underline">
+                    <Link to={'/segunda'} className="argumentos">Quem somos?</Link>
+                    </div>
+                    <div className="underline">
+                    <Link to={'/segunda'} className="argumentos">Fale Conosco</Link>
+                    </div>
+                    </div>
+
+                    <div className="login-cadastrar">
+                        <Link  className="login">
+                            <p>Login</p>
+                        </Link>
+                        <Link to={'/Segunda'} className="cadastrar">
+                            <p>Cadastrar</p>
+                            <div className="left"></div>
+                            <div className="right"></div>
+                        </Link>
+                    </div>
+                </section>
+            </header>
+
+        <main>
+            <section className="central-topo">
                 <div>
                     <img className='imgfrei' src="/public/imgfrei2.svg-removebg-preview.png" alt="Logo"  />
                 </div>
@@ -33,9 +67,9 @@ export default function Primeira() {
                     <img className='nucleo' src="/public/nucleo.png" alt=""  />
                     <img className="orbita" src="/public/orbita.png" alt="" />
                 </div>
-            </header>
+            </section>
 
-           <main>
+           
                 <section className='slider-container'>
                     <div className='slider'>
                         <div className='slides'>
@@ -83,6 +117,40 @@ export default function Primeira() {
                 <div className="emotion">
                         <p className="textemotion">ESFORÇO que tranforma, e o ORGULHO permanece</p>
                     </div>
+
+
+                    <section className="cursos">
+                    <div className="nu-oculto">
+                    <div className="opcoes-cursos">
+                        <button className="button-cursos" type="button" onClick={''}>Cursos 
+                            <img className="seta-baixo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E" alt="" /></button>   
+                    </div>
+                    <div className="oculto">
+                        <div className="ocultos">
+                            <p>Informática</p>
+                        </div>
+                        <div className="ocultos">
+                            <p>Comunicação Visual</p>
+                        </div>
+                        <div className="ocultos">
+                            <p>Administração</p>
+                        </div>
+                        <div className="ocultos">
+                            <p>Eletromecânica</p>
+                        </div>
+                        <div className="ocultos">
+                            <p>Robótica</p>
+                        </div>
+                        <div className="ocultos">
+                            <p>Inglês</p>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div className="video">
+                        <img src="https://images.icon-icons.com/936/PNG/512/play-button_icon-icons.com_73457.png" alt="" />
+                    </div>
+                    </section>
            </main>
         </>
     )
