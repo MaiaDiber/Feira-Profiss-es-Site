@@ -114,31 +114,30 @@ header{
     .cadastrar::before,
 .cadastrar::after {
   content: '';
-  position: absolute;
-  width: 20px;   
+  position: absolute;  
   height: 25px; 
-  border: 2px solid #39A9DB;
+  border: 1px solid #39A9DB;
 
 }
 
 .cadastrar .left,
 .cadastrar .right {
     position: absolute;
-    background-color: #39A9DB;
+    background-color: #43b7ec;
     transition: all 0.5s ease-in-out;
 }
 
 .left {
     left: 0;
     top: 25px;
-    width: 2px;
+    width: 1px;
     height: 0; 
 }
 
 .right {
     right: 0;
     bottom: 25px;
-    width: 2px;
+    width: 1px;
     height: 0; 
 }
 
@@ -152,14 +151,14 @@ header{
 
 
 .cadastrar::before {
-  top: -2px;
+  top: -1px;
   left: 0;
   border-right: none;
   border-bottom: none;
 }
 
 .cadastrar::after {
-  bottom: -2px;
+  bottom: -1px;
   right: 0;
   border-left: none;
   border-top: none;
