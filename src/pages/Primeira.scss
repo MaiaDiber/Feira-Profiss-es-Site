@@ -434,8 +434,9 @@ main{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        
-        
+        width: 200px;
+        height: 50px;
+        margin-left: 380px;
     }
     .opcoes-cursos{
         display: flex;
@@ -456,20 +457,26 @@ main{
         border-radius: 5px;
         border: none;
         font-weight: bold;
-
+        margin-top: 290px;
     }
- 
-    .button-cursos:hover .seta-baixo{
+
+    .nu-oculto:hover .button-oculto{
+        border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+    }
+
+    .nu-oculto:hover .seta-baixo{
         transform: rotate(180deg);
         
     }
 
-    .opcoes-cursos:hover + .oculto,
-.oculto:hover {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
     
+
+.nu-oculto:hover .oculto{
+    visibility: visible;
+    transform: translateY(10px);
+    opacity: 1;
+
 }
     .seta-baixo {
         width: 60px;
@@ -482,6 +489,8 @@ main{
         opacity: 0;
         z-index: 2;
         transition: all 0.5s ease-in-out;
+        visibility: hidden;
+        margin-top: -20px;
     }
     .ocultos{
         width: 200px;
@@ -498,7 +507,7 @@ main{
     }
 
     .video{
-        margin-top: -200px;
+        margin-top: 100px;
         background-color: #635f5f;
         width: 1000px;
         height: 400px;
