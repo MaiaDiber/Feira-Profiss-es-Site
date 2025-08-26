@@ -523,7 +523,65 @@ main{
         height: 100px;
     }
 }
-@media (max-width:1024px) {
+@media (max-width: 768px) {
+    *{
+        height: 150px;
+    }
+    .login-cadastrar a {
+        background-color: white;
+        height: 20px;
+        right: 200px;
+        padding: 15px;
+        color: hsl(226, 95%, 41%);
+    }
+    .underline-textos a{
+        left: 200px;
+        padding: 10px;
+
+    }
+    .emotion{
+        height: 10px;
+        padding: 1%;
+    }
+    .slider-container{
+        padding: 50px;
+        background-color: #0534ce;
+        margin-top: 40px;
+    }
+    .central-topo{
+        padding: 200px;
+    }
+    .argumentos::before{
+        background-color: #0534ce;
+        position: absolute;
+        margin-top: 200px;
+        top: 0;
+        left: 0;
+    }
+    .argumentos {
+  position: relative; // necessário para que o ::before se posicione corretamente
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100px; // ou o tamanho que quiser para os traços
+    height: 3px;
+    background-color: #000;
+    margin-top: 0; // remove o espaçamento extra
+  }
+}
+.navigation-auto{
+    margin-top: 50px;
     
-    
+}
+.navigation-auto{
+  position: absolute;
+  top: 20px; // empurra pra baixo dentro do container pai
+  margin-top: 285px;
+  display: flex;
+  gap: 20px;
+}
+
 }
