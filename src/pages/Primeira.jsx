@@ -42,7 +42,7 @@ export default function Primeira() {
                     </div>
 
                     <div className="login-cadastrar">
-                        <Link  className="login">
+                        <Link to={'/Login'} className="login">
                             <p>Login</p>
                         </Link>
                         <Link to={'/Segunda'} className="cadastrar">
