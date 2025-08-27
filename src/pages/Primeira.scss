@@ -116,7 +116,7 @@ header{
   content: '';
   position: absolute;  
   height: 25px; 
-  border: 1px solid #39A9DB;
+  border: 2px solid #39A9DB;
 
 }
 
@@ -130,14 +130,14 @@ header{
 .left {
     left: 0;
     top: 25px;
-    width: 1px;
+    width: 2px;
     height: 0; 
 }
 
 .right {
     right: 0;
     bottom: 25px;
-    width: 1px;
+    width: 2px;
     height: 0; 
 }
 
@@ -425,103 +425,184 @@ main{
 
 }
 
-.cursos{
+
+.cursos {
     padding-top: 80px;
-
-    .nu-oculto{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 200px;
-        height: 50px;
-        margin-left: 380px;
-    }
-    .opcoes-cursos{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .button-cursos{
-        width: 200px;
-        height: 50px;
-        font-size: 25px;
+  
+    .nu-oculto {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 200px;
+      height: 50px;
+      margin-left: 380px;
+      position: relative;
+  
+      .button-cursos {
+        background-color: #ff9500;
+        color: black;
+        font-weight: bold;
+        padding: 12px 20px;
+        border-radius: 8px 8px 0 0;
         cursor: pointer;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        gap: 30px;
-        background-color: #F0A202;
-        font-family: Arial, Helvetica, sans-serif;
-        border-radius: 5px;
-        border: none;
-        font-weight: bold;
-        margin-top: 290px;
-    }
-
-    .nu-oculto:hover .button-oculto{
-        border-bottom-right-radius: 0;
-            border-bottom-left-radius: 0;
-    }
-
-    .nu-oculto:hover .seta-baixo{
-        transform: rotate(180deg);
-        
-    }
-
-    
-
-.nu-oculto:hover .oculto{
-    visibility: visible;
-    transform: translateY(10px);
-    opacity: 1;
-
-}
-    .seta-baixo {
-        width: 60px;
-        height: 45px;
-        transition: all 0.4s ease-in-out;
-    }
-    .oculto{
-        display: flex;
-        flex-direction: column;
+        width: 100%;
+  
+        .seta-baixo {
+          transition: transform 0.3s ease;
+        }
+  
+        &:hover + .oculto {
+          display: block;
+          opacity: 1;
+          visibility: visible;
+        }
+  
+        &:hover .seta-baixo {
+          transform: rotate(180deg);
+        }
+      }
+  
+      .oculto {
+        position: absolute;
+        top: 90%;
+        left: 0;
+        width: 100%;
+        background-color: #ff9500;
+        border-radius: 0 0 8px 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        display: none;
         opacity: 0;
-        z-index: 2;
-        transition: all 0.5s ease-in-out;
         visibility: hidden;
-        margin-top: -20px;
+        transition: all 0.3s ease;
+        z-index: 100;
+  
+        &:hover {
+          display: block;
+          opacity: 1;
+          visibility: visible;
+        }
+  
+        .ocultos {
+          width: 100%;
+          background: none;
+          border: none;
+          color: black;
+          cursor: pointer;
+          transition: background-color 0.2s ease;
+  
+          &:hover {
+            background-color: #e68900;
+          }
+  
+          &.voltar-inicio {
+            border-bottom: 1px solid #e68900;
+            font-weight: bold;
+          }
+  
+          &:last-child {
+            border-radius: 0 0 8px 8px;
+          }
+  
+          p {
+            margin: 0;
+            padding: 10px 16px;
+          }
+        }
+      }
     }
-    .ocultos{
-        width: 200px;
-        height: 50px;
-        font-size: 20px;
-        cursor: pointer;
+  
+    .conteudo-area {
+      margin-top: 20px;
+  
+      .video {
+        // Seus estilos originais do vídeo
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #F0A202;
-        font-family: Arial, Helvetica, sans-serif;
-        border: 1px solid #000000;
-        font-weight: bold;
-    }
-
-    .video{
-        margin-top: 100px;
-        background-color: #635f5f;
-        width: 1000px;
-        height: 400px;
-        border-radius: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1;
         
+        img {
+          width: 60px;
+          height: 60px;
+        }
+      }
+  
+      .curso-expandido {
+        width: 100%;
+        height: 500px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        animation: fadeIn 0.5s ease-out;
+  
+        .curso-info {
+          flex: 2;
+          padding: 40px;
+          display: flex;
+          flex-direction: column;
+  
+          h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #333;
+          }
+  
+          p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+          }
+  
+          .btn-inscricao {
+            background-color: #ff9500;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: auto;
+            transition: background-color 0.3s ease;
+  
+            &:hover {
+              background-color: #e68900;
+            }
+          }
+        }
+  
+        .video {
+          flex: 1;
+          background-color: #ff9500;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 0 8px 8px 0;
+  
+          img {
+            width: 80px;
+            height: 80px;
+          }
+        }
+      }
     }
-    .video img{
-        width: 100px;
-        height: 100px;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
     }
-}
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 @media (max-width: 768px) {
     *{
         height: 150px;
@@ -583,4 +664,25 @@ main{
   gap: 20px;
 }
 
+}
+
+#container-info{
+    opacity: 0;
+    width: 100%;
+    height: 500px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .retangulo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        height: 300px;
+        background-color: #F0A202;
+        font-size: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
 }

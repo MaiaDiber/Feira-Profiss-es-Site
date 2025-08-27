@@ -36,7 +36,7 @@ export default function slides() {
   }
 
   function updateIndicators() {
-    // Remove a cor de todas as bolinhas
+   
     for (let i = 1; i <= 5; i++) {
       const indicator = document.querySelector(`.auto-btn${i}`);
       if (indicator) {
@@ -44,7 +44,7 @@ export default function slides() {
       }
     }
     
-    // Adiciona cor na bolinha atual
+   
     const currentIndicator = document.querySelector(`.auto-btn${count}`);
     if (currentIndicator) {
       currentIndicator.style.backgroundColor = '#053bebe6';
@@ -88,7 +88,7 @@ export default function slides() {
       });
     }
 
-    // Adiciona listeners para os indicadores (bolinhas)
+   
     for (let i = 1; i <= 5; i++) {
       const indicator = document.querySelector(`.auto-btn${i}`);
       if (indicator) {
@@ -101,7 +101,7 @@ export default function slides() {
     }
   }
 
-  // Função para tentar configurar os listeners várias vezes se necessário
+  
   function trySetupNavigation(attempts = 0) {
     const maxAttempts = 10;
     
@@ -126,7 +126,7 @@ export default function slides() {
 
   return function() {
     startSlider();
-    // Tenta configurar a navegação
+   
     trySetupNavigation();
   };
 }

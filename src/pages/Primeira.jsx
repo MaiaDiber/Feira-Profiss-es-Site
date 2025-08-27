@@ -3,6 +3,8 @@ import { Link } from "react-router";
 import { useEffect } from "react";
 import slides from './scipts.js'
 import "./Primeira.scss";
+import { useState } from "react";
+import { cursos, selecionarCurso, voltarInicio } from "./cursos.js";
 
 export default function Primeira() {
   useEffect(() => {
@@ -14,8 +16,13 @@ export default function Primeira() {
     return () => clearTimeout(timer);
   }, []);
     
+    // Estado para controlar qual curso está selecionado
+    const [cursoSelecionado, setCursoSelecionado] = useState('');
   
-
+    // Criando as funções
+    const handleSelecionarCurso = selecionarCurso(setCursoSelecionado);
+    const handleVoltarInicio = voltarInicio(setCursoSelecionado);
+  
     return(
         <>
 
@@ -120,37 +127,77 @@ export default function Primeira() {
 
 
                     <section className="cursos">
-                    <div className="nu-oculto">
-                    
-                        <button className="button-cursos" type="button" onClick={''}>Cursos 
-                            <img className="seta-baixo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E" alt="" />
-                            </button>   
-                    <div className="oculto">
-                        <div className="ocultos">
-                            <p>Informática</p>
-                        </div>
-                        <div className="ocultos">
-                            <p>Comunicação Visual</p>
-                        </div>
-                        <div className="ocultos">
-                            <p>Administração</p>
-                        </div>
-                        <div className="ocultos">
-                            <p>Eletromecânica</p>
-                        </div>
-                        <div className="ocultos">
-                            <p>Robótica</p>
-                        </div>
-                        <div className="ocultos">
-                            <p>Inglês</p>
-                        </div>
-                    </div>
-                    </div>
+      <div className="nu-oculto">
+        
+        {/* Botão principal - muda o texto baseado no curso selecionado */}
+        <div className="button-cursos">
+          {cursoSelecionado || 'Cursos'}
+          <img 
+            className="seta-baixo" 
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E" 
+            alt="" 
+          />
+        </div>   
+        
+        {/* Menu dropdown */}
+        <div className="oculto">
+          
+          {/* Botão voltar - só aparece quando tem curso selecionado */}
+          {cursoSelecionado && (
+            <button 
+              type="button" 
+              className="ocultos voltar-inicio"
+              onClick={handleVoltarInicio}
+            >
+              <p>← Voltar ao Início</p>
+            </button>
+          )}
+          
+          {/* Lista de cursos - só mostra os que não estão selecionados */}
+          {cursos.map((curso) => (
+            (!cursoSelecionado || cursoSelecionado !== curso) && (
+              <button 
+                key={curso}
+                type="button" 
+                className={`ocultos ${curso === 'Informática' ? 'button-info' : ''}`}
+                onClick={() => handleSelecionarCurso(curso)}
+              >
+                <p>{curso}</p>
+              </button>
+            )
+          ))}
+        </div>
+      </div>
 
-                    <div className="video">
-                        <img src="https://images.icon-icons.com/936/PNG/512/play-button_icon-icons.com_73457.png" alt="" />
-                    </div>
-                    </section>
+      {/* Área que muda - ou vídeo inicial ou conteúdo do curso */}
+      <div className="conteudo-area">
+        {cursoSelecionado ? (
+          /* Área expandida quando curso é selecionado */
+          <div className="curso-expandido">
+            <div className="curso-info">
+              <h1>Curso de {cursoSelecionado}</h1>
+              <p>
+                {cursoSelecionado === 'Informática' && 'Aprenda programação, desenvolvimento web e muito mais!'}
+                {cursoSelecionado === 'Comunicação Visual' && 'Desenvolva sua criatividade com design gráfico!'}
+                {cursoSelecionado === 'Administração' && 'Gerencie negócios com eficiência!'}
+                {cursoSelecionado === 'Eletromecânica' && 'Domine sistemas elétricos e mecânicos!'}
+                {cursoSelecionado === 'Robótica' && 'Construa e programe robôs incríveis!'}
+                {cursoSelecionado === 'Inglês' && 'Desenvolva fluência no idioma global!'}
+              </p>
+              <button className="btn-inscricao">Inscreva-se Agora</button>
+            </div>
+            <div className="video">
+              <img src="https://images.icon-icons.com/936/PNG/512/play-button_icon-icons.com_73457.png" alt="" />
+            </div>
+          </div>
+        ) : (
+          /* Sua área original do vídeo */
+          <div className="video">
+            <img src="https://images.icon-icons.com/936/PNG/512/play-button_icon-icons.com_73457.png" alt="" />
+          </div>
+        )}
+      </div>
+    </section>
            </main>
         </>
     )
