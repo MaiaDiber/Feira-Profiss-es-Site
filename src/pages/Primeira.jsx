@@ -173,21 +173,19 @@ export default function Primeira() {
       <div className="conteudo-area">
         {cursoSelecionado ? (
           /* Área expandida quando curso é selecionado */
-          <div className="curso-expandido">
-            <div className="curso-info">
-              <h1>Curso de {cursoSelecionado}</h1>
-              <p>
-                {cursoSelecionado === 'Informática' && 'Aprenda programação, desenvolvimento web e muito mais!'}
-                {cursoSelecionado === 'Comunicação Visual' && 'Desenvolva sua criatividade com design gráfico!'}
-                {cursoSelecionado === 'Administração' && 'Gerencie negócios com eficiência!'}
-                {cursoSelecionado === 'Eletromecânica' && 'Domine sistemas elétricos e mecânicos!'}
-                {cursoSelecionado === 'Robótica' && 'Construa e programe robôs incríveis!'}
-                {cursoSelecionado === 'Inglês' && 'Desenvolva fluência no idioma global!'}
-              </p>
-            
-            </div>
-            
+          <div className={`curso-expandido ${cursoSelecionado.toLowerCase().replace(" ", "-")}`}>
+          <div className="curso-info">
+            <h1>Curso de {cursoSelecionado}</h1>
+            <p>
+              {cursoSelecionado === 'Informática' && 'Aprenda programação, desenvolvimento web e muito mais!'}
+              {cursoSelecionado === 'Comunicação Visual' && 'Desenvolva sua criatividade com design gráfico!'}
+              {cursoSelecionado === 'Administração' && 'Gerencie negócios com eficiência!'}
+              {cursoSelecionado === 'Eletromecânica' && 'Domine sistemas elétricos e mecânicos!'}
+              {cursoSelecionado === 'Robótica' && 'Construa e programe robôs incríveis!'}
+              {cursoSelecionado === 'Inglês' && 'Desenvolva fluência no idioma global!'}
+            </p>
           </div>
+        </div>
         ) : (
           /* Sua área original do vídeo */
           <div className="video">

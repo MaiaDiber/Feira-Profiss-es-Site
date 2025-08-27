@@ -434,7 +434,7 @@ main{
         align-items: center;
         width: 200px;
         height: 50px;
-        margin-left: 380px;
+        margin: 0 auto;
     }
     .opcoes-cursos{
         display: flex;
@@ -455,6 +455,7 @@ main{
         border: none;
         font-weight: bold;
         margin-top: 290px;
+        z-index: 2;
         
     }
 
@@ -542,6 +543,37 @@ main{
         width: 100px;
         height: 100px;
     }
+}
+
+
+.curso-expandido{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1300px;
+    height: 500px;
+    background-color: #836ff5;
+    margin-top: 100px;
+    border-radius: 10px;
+}
+
+.curso-expandido.informática{
+    background-color: #101cc0;
+}
+.curso-expandido.comunicação-visual{
+    background-color: #a30982;
+}
+.curso-expandido.administração{
+    background-color: #c55d08;
+}
+.curso-expandido.eletromecânica{
+    background-color: #000000;
+}
+.curso-expandido.robótica{
+    background-color: #0b9128;
+}
+.curso-expandido.inglês{
+    background-color: #f11818;
 }
 @media (max-width: 768px) {
     *{
