@@ -184,11 +184,9 @@ export default function Primeira() {
                 {cursoSelecionado === 'Robótica' && 'Construa e programe robôs incríveis!'}
                 {cursoSelecionado === 'Inglês' && 'Desenvolva fluência no idioma global!'}
               </p>
-              <button className="btn-inscricao">Inscreva-se Agora</button>
+            
             </div>
-            <div className="video">
-              <img src="https://images.icon-icons.com/936/PNG/512/play-button_icon-icons.com_73457.png" alt="" />
-            </div>
+            
           </div>
         ) : (
           /* Sua área original do vídeo */
