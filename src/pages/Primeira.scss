@@ -80,7 +80,6 @@ header{
         position: relative;
         font-size: 20px;
         transition: all 0.5s;
-        border: 2px solid #000;
     
        
         p {
@@ -426,6 +425,7 @@ main{
 
 .cursos{
     padding-top: 80px;
+    
 
     .nu-oculto{
         display: flex;
@@ -486,10 +486,12 @@ main{
         display: flex;
         flex-direction: column;
         opacity: 0;
-        z-index: 2;
+        z-index: 5;
         transition: all 0.5s ease-in-out;
         visibility: hidden;
         margin-top: -20px;
+        transform: scale(0.8) translateY(20px);
+        
     }
 
     .ocultos{
@@ -526,8 +528,11 @@ main{
         border-radius: 0 0 5px 5px;
     }
 
+    
+
 
     .video{
+        position: absolute;
         margin-top: 100px;
         background-color: #635f5f;
         width: 1000px;
@@ -537,44 +542,83 @@ main{
         justify-content: center;
         align-items: center;
         z-index: 1;
+
+        transition: all 1s ease-in-out;
+  
+        img {
+          width: 100px;
+          height: 100px;
+        }
         
     }
-    .video img{
-        width: 100px;
-        height: 100px;
-    }
+    
 }
 
 
 .curso-expandido{
+    position: absolute; // Para sobrepor com o vídeo
     display: flex;
     justify-content: center;
     align-items: center;
     width: 1300px;
     height: 500px;
-    background-color: #836ff5;
+    background-color: #6ff597;
     margin-top: 100px;
     border-radius: 10px;
+    z-index: 2;
+    
+    // TRANSIÇÃO APLICADA SEMPRE
+    transition: all 1s ease-in-out;
 }
 
+.conteudo-area {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px; // Para manter altura consistente
+  }
+
+  .visivel {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    visibility: visible;
+    pointer-events: all;
+  }
+
 .curso-expandido.informática{
-    background-color: #101cc0;
+    background-color: #ffffff;
+    box-shadow: inset 0 0 0 20px #022892;
+
+    .Cartão-Informática{
+        padding: 50px;
+        border-radius: 10px;
+        background-color: #50B5E1;
+    }
 }
+
 .curso-expandido.comunicação-visual{
-    background-color: #a30982;
+    background-color: #ffffff;
+    box-shadow: inset 0 0 0 25px #6f029b;
 }
 .curso-expandido.administração{
-    background-color: #c55d08;
+    background-color: #ffffff;
+    box-shadow: inset 0 0 0 30px #eb710d;
 }
 .curso-expandido.eletromecânica{
-    background-color: #000000;
+    background-color: #ffffff;
+    box-shadow: inset 0 0 0 35px #000000;
 }
 .curso-expandido.robótica{
-    background-color: #0b9128;
+    background-color: #ffffff;
+    box-shadow: inset 0 0 0 40px #029b87;
 }
 .curso-expandido.inglês{
-    background-color: #f11818;
+    background-color: #ffffff;
+    box-shadow: inset 0 0 0 45px #9b0202;
 }
+
 @media (max-width: 768px) {
     *{
         height: 150px;

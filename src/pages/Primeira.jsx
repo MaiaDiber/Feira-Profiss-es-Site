@@ -1,9 +1,8 @@
 
 import { Link } from "react-router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import slides from './scipts.js'
 import "./Primeira.scss";
-import { useState } from "react";
 import { cursos, selecionarCurso, voltarInicio } from "./cursos.js";
 
 export default function Primeira() {
@@ -22,6 +21,20 @@ export default function Primeira() {
     // Criando as funções
     const handleSelecionarCurso = selecionarCurso(setCursoSelecionado);
     const handleVoltarInicio = voltarInicio(setCursoSelecionado);
+
+    const getCursoContent = (curso) => {
+      switch (curso) {
+        case 'Informática': 
+        return (
+          <section className="Cartão-Informática">
+              <h1>Testando 123... informática</h1>
+          </section>
+        );
+
+        default: 
+        return null;
+      }
+    };
   
     return(
         <>
@@ -171,28 +184,19 @@ export default function Primeira() {
 
       {/* Área que muda - ou vídeo inicial ou conteúdo do curso */}
       <div className="conteudo-area">
-        {cursoSelecionado ? (
-          /* Área expandida quando curso é selecionado */
-          <div className={`curso-expandido ${cursoSelecionado.toLowerCase().replace(" ", "-")}`}>
-          <div className="curso-info">
-            <h1>Curso de {cursoSelecionado}</h1>
-            <p>
-              {cursoSelecionado === 'Informática' && 'Aprenda programação, desenvolvimento web e muito mais!'}
-              {cursoSelecionado === 'Comunicação Visual' && 'Desenvolva sua criatividade com design gráfico!'}
-              {cursoSelecionado === 'Administração' && 'Gerencie negócios com eficiência!'}
-              {cursoSelecionado === 'Eletromecânica' && 'Domine sistemas elétricos e mecânicos!'}
-              {cursoSelecionado === 'Robótica' && 'Construa e programe robôs incríveis!'}
-              {cursoSelecionado === 'Inglês' && 'Desenvolva fluência no idioma global!'}
-            </p>
-          </div>
-        </div>
-        ) : (
-          /* Sua área original do vídeo */
-          <div className="video">
-            <img src="https://images.icon-icons.com/936/PNG/512/play-button_icon-icons.com_73457.png" alt="" />
-          </div>
-        )}
-      </div>
+  {/* Vídeo */}
+  <div className={`video ${cursoSelecionado ? 'oculto' : 'visivel'}`}>
+    <img src="https://images.icon-icons.com/936/PNG/512/play-button_icon-icons.com_73457.png" alt="" />
+  </div>
+  
+  {/* Curso */}
+  <div className={`curso-expandido ${cursoSelecionado ? 'visivel' : 'oculto'} ${cursoSelecionado ? cursoSelecionado.toLowerCase().replace(" ", "-") : ''}`}>
+    <div className="curso-info">
+      {cursoSelecionado && getCursoContent(cursoSelecionado)}
+    </div>
+  </div>
+</div>
+
     </section>
            </main>
         </>
