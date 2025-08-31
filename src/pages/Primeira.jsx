@@ -27,7 +27,91 @@ export default function Primeira() {
         case 'Informática': 
         return (
           <section className="Cartão-Informática">
-              <h1>Testando 123... informática</h1>
+              <div className="text-info">
+              <h1>Informática</h1>
+              <div className="linha-info"></div>
+              </div>
+              <div className="doisconteudos">
+                <div className="img-info">
+                  <img src="WhatsApp-Image-2025-08-30-at-17.39.06.png" alt="" />
+                </div>
+                <div className="sobre-info">
+                  <div className="hardware">
+                    <h1>HARDWARE</h1>
+
+                      <div className="text-hardware">
+                        <p>Hardware é toda a parte física do computador, <br />
+                         ou seja, tudo aquilo que podemos tocar: peças, cabos, placas, tela, teclado, etc.
+                         <br /> O que irá aprender aqui no Frei? Veja abaixo:
+                        </p>
+                       
+                        <div className="ul-li">
+                        <ul>
+                          <li>Explorar Componentes Internos</li>
+                          <li>Montagem e Desmontagens de Compiutadores</li>
+                          <li>Cuidadados e Segurança</li>
+                          <li>Manutenção e Diagnóstico</li>
+                          <li>Preparação para o Futuro</li>
+                          <li>Comandos de CMD</li>
+                          <li>Redes e Conexões</li>
+                          <li>Tendencias e Inovações</li>
+                        </ul>
+                        </div>
+                        </div>
+                      
+
+                
+                  </div>
+                 <div className="tudo-software">
+                 <div className="software">
+                    <h1>SOFTWARE</h1>
+                    </div>
+                    <div className="lg-software">
+                      <h1>SOFTWARE</h1>
+
+                      <div className="text-software">
+                        <p>Software é a parte lógica do computador, formada 
+                         por todos os programas e instruções que fazem o 
+                         hardware funcionar. Se compararmos um 
+                         computador com o corpo humano, o hardware 
+                          seria o corpo físico e o software seria a mente, que 
+                          dá comandos e define o que deve ser feito. O que irá aprender durande o curso: </p>
+                      </div>
+
+                   
+                        <div className="parte1">
+                        <div className="blocos-software">
+                          <div className="bola"></div>
+                          <p>JS</p>
+                        </div>
+                        <div className="blocos-software">
+                          <div className="bola"></div>
+                          <p>MYSQL</p>
+                        </div>
+                        <div className="blocos-software">
+                          <div className="bola"></div>
+                          <p>HTML</p>
+                        </div>
+                        </div>
+                        <div className="parte2">
+                        <div className="blocos-software">
+                          <div className="bola"></div>
+                          <p>CSS</p>
+                        </div>
+                        <div className="blocos-software">
+                          <div className="bola"></div>
+                          <p>REACT</p>
+                        </div>
+                        <div className="blocos-software">
+                          <div className="bola"></div>
+                          <p>API</p>
+                        </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              
+                 </div>
           </section>
         );
 
@@ -176,7 +260,7 @@ export default function Primeira() {
                 onClick={() => handleSelecionarCurso(curso)}
               >
                 <p>{curso}</p>
-              </button>
+              </button>             
             )
           ))}
         </div>
