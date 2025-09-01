@@ -28,7 +28,7 @@ export default function Primeira() {
         return (
           <section className="Cartão-Informática">
               <div className="text-info">
-              <h1>Informática</h1>
+              <h1 className="h1-info">Informática</h1>
               <div className="linha-info"></div>
               </div>
               <div className="doisconteudos">
@@ -36,13 +36,15 @@ export default function Primeira() {
                   <img src="WhatsApp-Image-2025-08-30-at-17.39.06.png" alt="" />
                 </div>
                 <div className="sobre-info">
+                  <div className="tudo-hardware">
                   <div className="hardware">
                     <h1>HARDWARE</h1>
-
+                    </div>
                       <div className="text-hardware">
-                        <p>Hardware é toda a parte física do computador, <br />
-                         ou seja, tudo aquilo que podemos tocar: peças, cabos, placas, tela, teclado, etc.
-                         <br /> O que irá aprender aqui no Frei? Veja abaixo:
+                        <p>Hardware é toda a parte física do <br />computador, 
+                         ou seja, tudo aquilo que <br />podemos tocar: peças, cabos, placas,<br /> tela, teclado, etc.
+                         <br /> O que irá aprender aqui no Frei? <br />
+                         Veja abaixo:
                         </p>
                        
                         <div className="ul-li">
@@ -57,10 +59,8 @@ export default function Primeira() {
                           <li>Tendencias e Inovações</li>
                         </ul>
                         </div>
-                        </div>
-                      
-
-                
+                        
+                  </div>
                   </div>
                  <div className="tudo-software">
                  <div className="software">
@@ -70,12 +70,12 @@ export default function Primeira() {
                       <h1>SOFTWARE</h1>
 
                       <div className="text-software">
-                        <p>Software é a parte lógica do computador, formada 
+                        <p>Software é a parte lógica do <br /> computador, formada 
                          por todos os programas e instruções que fazem o 
-                         hardware funcionar. Se compararmos um 
-                         computador com o corpo humano, o hardware 
-                          seria o corpo físico e o software seria a mente, que 
-                          dá comandos e define o que deve ser feito. O que irá aprender durande o curso: </p>
+                         hardware funcionar. Se compararmos <br /> um 
+                         computador com o corpo humano, <br /> o hardware 
+                          seria o corpo físico e o <br /> software seria a mente, que 
+                          dá <br /> comandos e define o que deve ser feito. <br /> O que irá aprender durande o curso: </p>
                       </div>
 
                    
