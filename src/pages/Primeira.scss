@@ -43,8 +43,6 @@ header{
         transition: all 0.5s;
     }
 
-    
-
     .argumentos {
         position: relative;
         display: block;
@@ -82,7 +80,6 @@ header{
         position: relative;
         font-size: 20px;
         transition: all 0.5s;
-        border: 2px solid #000;
     
        
         p {
@@ -428,6 +425,7 @@ main{
 
 .cursos{
     padding-top: 80px;
+    
 
     .nu-oculto{
         display: flex;
@@ -436,7 +434,7 @@ main{
         align-items: center;
         width: 200px;
         height: 50px;
-        margin-left: 380px;
+        margin: 0 auto;
     }
     .opcoes-cursos{
         display: flex;
@@ -457,6 +455,7 @@ main{
         border: none;
         font-weight: bold;
         margin-top: 290px;
+        z-index: 2;
         
     }
 
@@ -487,14 +486,16 @@ main{
         display: flex;
         flex-direction: column;
         opacity: 0;
-        z-index: 2;
+        z-index: 5;
         transition: all 0.5s ease-in-out;
         visibility: hidden;
         margin-top: -20px;
+        transform: scale(0.8) translateY(20px);
+        
     }
 
     .ocultos{
-        width: 200px;
+        width: 220px;
         height: 50px;
         font-size: 20px;
         cursor: pointer;
@@ -527,8 +528,18 @@ main{
         border-radius: 0 0 5px 5px;
     }
 
+    .ocultos:not(:last-child), 
+    .ocultos:not(:first-child){
+        border-bottom: 1px solid #da9306;
+        border-top: 1px solid #da9306;
+    }
+
+
+    
+
 
     .video{
+        position: absolute;
         margin-top: 100px;
         background-color: #635f5f;
         width: 1000px;
@@ -538,13 +549,263 @@ main{
         justify-content: center;
         align-items: center;
         z-index: 1;
+
+        transition: all 1s ease-in-out;
+  
+        img {
+          width: 100px;
+          height: 100px;
+        }
         
     }
-    .video img{
-        width: 100px;
-        height: 100px;
-    }
+    
 }
+
+
+.curso-expandido{
+    position: absolute; // Para sobrepor com o vídeo
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1300px;
+    height: 500px;
+    background-color: #6ff597;
+    margin-top: 100px;
+    border-radius: 10px;
+    z-index: 2;
+    
+    // TRANSIÇÃO APLICADA SEMPRE
+    transition: all 1s ease-in-out;
+}
+
+.conteudo-area {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px; // Para manter altura consistente
+  }
+
+
+.curso-expandido.informática{
+    background-color: #ffffff;
+    box-shadow: inset 50px 0 0 0 #022892, inset -50px 0 0 0 #022892,inset 0 30px 0 0 #022892, inset 0 -30px 0 0 #022892;
+    overflow: hidden;
+
+    .Cartão-Informática{
+        width: 1200px;
+        height: 440px;
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+
+
+        h1{
+            margin-top: 170px;
+            font-size: 35px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: -10px;
+            text-align: center;
+            color: #021f6e;
+            font-weight: bold;
+        }
+
+        .linha-info{
+            height: 2px;
+            width: 1000px;
+            background-color: #021f6e;
+        }
+
+        .doisconteudos{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sobre-info{
+            width: 650px;
+            height: 350px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            margin-top: -50px;
+            gap: 10px;
+
+            .hardware{
+                width: 100%;
+                height: 50%;
+
+                h1{
+                    color: rgb(216, 141, 3);
+                    margin-top: 10px;
+                }
+
+                .text-hardware{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    gap: 20px;
+
+                    .ul-li{
+                        background-color: #F0A202;
+                        width: 370px;
+                        height: 150px;
+                        display: flex;
+                      
+                        align-items: center;
+
+                        flex-direction: column;
+                        font-family: Arial, Helvetica, sans-serif;     
+                        font-weight: bold;
+                        font-size: 15px;
+                        border-radius: 5px;
+                    }
+                }
+
+                .text-hardware p{
+                   font-family: Arial, Helvetica, sans-serif;     
+                   font-weight: bold;
+                
+                }
+            }
+
+            .tudo-software{
+                position: relative;
+                width: 100%;
+                height: 350px;
+            }
+
+            .tudo-software:hover .software{
+                opacity: 0;
+                transition: all 1s ease-in-out;
+                cursor: pointer;
+                border: 1px solid black;
+            }
+            .tudo-software:hover .lg-software{
+                opacity: 1;
+                visibility: visible;
+            
+            }
+
+            .software{
+                background-color: #0b39b9;
+                width: 100%;
+                height: 350px;
+                border-radius: 5px;
+                margin-top: 50px;
+                transition: all 1s ease-in-out;
+                opacity: 1;
+              
+            }
+             
+                
+                .lg-software{
+                    position: absolute;
+                    top: -40%;
+                    left: 0;
+                    width: 100%;
+                    height: 350px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    gap: 15px;
+                    opacity: 0;
+                    visibility: hidden;
+                    
+                }
+
+                .text-software p{
+                    font-family: Arial, Helvetica, sans-serif;     
+                   font-weight: bold;
+                }
+
+                h1{
+                    padding: 150px 10px;
+                    color: #FFFFFF;
+                    margin-top: 10px;
+                }
+
+                .parte1{
+                    display: flex;
+                    gap: 5px;
+                }
+                .parte2{
+                    display: flex;
+                    gap: 5px;
+                }
+
+            }
+
+            h1{
+                font-size: 25px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            .blocos-software {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 3px;
+                background-color: #c2d2ff;
+                width: 80px;
+                height: 30px;
+                gap:5px;
+
+                .bola{
+                    background-color: #255aeb;
+                    border-radius: 50%;
+                    width: 10px;
+                    height: 10px;
+                }
+
+                p{
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-weight: bold;
+                }
+            }
+            
+            
+            
+        }
+        .img-info img{
+            height: 355px;
+            width: 455px;
+            border-radius: 10px;
+        }
+    
+    
+}
+
+.curso-expandido.comunicação-visual{
+    background-color: #ffffff;
+    box-shadow: inset 0 0 0 25px #6f029b;
+}
+.curso-expandido.administração{
+    background-color: #ffffff;
+    box-shadow: inset 0 0 0 30px #eb710d;
+}
+.curso-expandido.eletromecânica{
+    background-color: #ffffff;
+    box-shadow: inset 0 0 0 35px #000000;
+}
+.curso-expandido.robótica{
+    background-color: #ffffff;
+    box-shadow: inset 0 0 0 40px #029b87;
+}
+.curso-expandido.inglês{
+    background-color: #ffffff;
+    box-shadow: inset 0 0 0 45px #9b0202;
+}
+
 @media (max-width: 768px) {
     *{
         height: 150px;
@@ -608,23 +869,4 @@ main{
 
 }
 
-#container-info{
-    opacity: 0;
-    width: 100%;
-    height: 500px;
-    background-color: #FFFFFF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-    .retangulo{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 300px;
-        height: 300px;
-        background-color: #F0A202;
-        font-size: 25px;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-}
