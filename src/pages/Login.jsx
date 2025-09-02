@@ -1,10 +1,10 @@
-import { Link } from "react-router";
-import { useEffect } from "react";
-import slides from './scipts.js'
+import React from "react";
+import { useEffect, useState } from "react";
+import slides from './scipts.js';
 import "./Login.scss";
 
 export default function Login() {
-    useEffect(() => {
+  useEffect(() => {
       const timer = setTimeout(() => {
         const startSlider = slides();
         startSlider();
@@ -15,32 +15,30 @@ export default function Login() {
       
   return (
     <>
+    <div className="login-page">
 
-      <header className='container-cabeçalho'></header>
-        <menu className='container-principal'>
-            <section className='container-dentro'>
-                    <h1>Login</h1>
-                    
-              <div className="container-caixa-entrada-nome">
-                <h3>Nome</h3>
+      <div className="login-container">
+        <h1>Login</h1>
 
-                <label htmlFor="nome"></label> 
-                    <input type="text" id="nome" placeholder="Digite seu nome completo" />
-              </div>
+        <div className="input-group">
+            <h3>Nome</h3>
 
-              <div className="container-caixa-entrada-senha">
-                  <h3>Senha</h3>
+            <label htmlFor="nome"></label>
+            <input type="text" id="nome" placeholder="Digite seu nome completo" />
+        </div>
 
-                <label htmlFor="senha"></label> 
-                    <input type="text" id="senha" placeholder="Digite sua senha" />
-              </div>
+        <div className="input-group">
+            <h3>Senha</h3>
 
+            <label htmlFor="senha"></label>
+            <input type="password" id="senha" placeholder="Digite sua senha" />
+          
+            <a href="#" className="forgot-password">Esqueci a senha</a>
+        </div>
 
-            </section>
-
-        </menu>
-
-
+        <button className="cadastrar">Cadastrar</button>
+      </div>
+    </div>
     </>
-  )
+  );
 }
