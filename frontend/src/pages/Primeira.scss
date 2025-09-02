@@ -655,16 +655,28 @@ main{
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                flex-direction: column;
+                gap: 0;
                 opacity: 1;
                 transition: all 1s ease-in-out;
                 border-radius: 35px;
-                background: linear-gradient(135deg, #eebd36 10%, #ffc62a 20%, #fab41c 30%, #d88d03 50%, #f5af19 80%, #f1c638 100%);
+                background: linear-gradient(135deg, #ebb520 10%, #e7b017 20%, #eba611 30%, #d88d03 50%, #f5af19 80%, #f7c627 100%);
+                
+
+                .seta-mouse{
+                    width: 30px;
+                    height: 35px;
+                    margin: 0;
+                  margin-top: -140px;
+                }
+
             }
     
             .hardware h1 {
                 color: #ffffff;
                 font-size: 30px;
-                margin: 0;
+                margin-top: -100px;
+               
             }
     
             .text-hardware {
@@ -734,6 +746,8 @@ main{
                 transform: translateY(-15px);
             }
 
+                
+
             .tudo-software{
                 position: relative;
                 width: 300px;
@@ -758,14 +772,23 @@ main{
                 width: 300px;
                 height: 350px;
                 border-radius: 35px;
-                margin-top: 20px;
+                margin-top: 0px;
                 transition: all 1s ease-in-out;
                 opacity: 1;
-                margin-top: -10px;
+                display: flex;
+                flex-direction: column;
+                gap: 0;
 
                 h1{
                     text-align: center;
                     font-size: 30px;
+                }
+
+                .seta-mouse2{
+                    margin-top: -140px;
+                    margin-left: 130px;
+                    width: 30px;
+                    height: 35px;
                 }
             }
              
