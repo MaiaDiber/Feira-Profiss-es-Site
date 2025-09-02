@@ -39,6 +39,8 @@ export default function Primeira() {
                   <div className="tudo-hardware">
                   <div className="hardware">
                     <h1>HARDWARE</h1>
+                    <img className="seta-mouse" src="ChatGPT Image 1 de set. de 2025, 21_41_56.png" alt="" />
+
                     </div>
                       <div className="text-hardware">
                         <p>Hardware é toda a parte física do <br />computador, 
@@ -65,6 +67,7 @@ export default function Primeira() {
                  <div className="tudo-software">
                  <div className="software">
                     <h1>SOFTWARE</h1>
+                    <img className="seta-mouse2" src="ChatGPT Image 1 de set. de 2025, 21_41_56.png" alt="" />
                     </div>
                     <div className="lg-software">
                       <h1>SOFTWARE</h1>
