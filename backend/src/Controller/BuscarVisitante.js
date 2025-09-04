@@ -3,7 +3,7 @@ import * as repository from "../Repository/feiraRepository.js";
 import { Router } from "express";
 const endpoint = Router()
 
-endpoint.get('/Checar/Tabela', async (req, resp) => {
+endpoint.get('/Buscar/Todos/Visitantes', async (req, resp) => {
 
     try{
         let registro = await repository.Checagem()
@@ -16,6 +16,10 @@ endpoint.get('/Checar/Tabela', async (req, resp) => {
     }
 })
 
-endpoint.get('/Procurar/Visitante')
+endpoint.get('/Buscar/Visitante', async (req, resp) => {
+    
+})
+
+
 
 export default endpoint

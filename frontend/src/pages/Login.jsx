@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import slides from './scipts.js';
 import "./Login.scss";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   useEffect(() => {
@@ -18,6 +19,12 @@ export default function Login() {
     <div className="login-page">
 
       <div className="login-container">
+
+      <Link to={'/'} className="Voltar">
+        <img src="seta-voltar.webp" alt="" />
+        <h1>Voltar</h1>
+      </Link>
+
         <h1>Login</h1>
 
         <div className="input-group">
