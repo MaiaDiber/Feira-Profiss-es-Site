@@ -541,7 +541,6 @@ main{
     .video{
         position: absolute;
         margin-top: 100px;
-        background-color: #635f5f;
         width: 1000px;
         height: 400px;
         border-radius: 10px;
@@ -549,12 +548,34 @@ main{
         justify-content: center;
         align-items: center;
         z-index: 1;
-
         transition: all 1s ease-in-out;
+        display: flex;
+        gap: 20px;
+        background: linear-gradient(350deg, #ffffff 30%, #94a6ff 60%, #ffffff 90%);
   
+        .text-véio{
+            display: flex;
+            flex-direction: column;
+
+            h1{
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+
+            p{
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 19px;
+            }
+
+            .ggpp{
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 15px;
+            }
+        }
+
         img {
-          width: 100px;
-          height: 100px;
+            border-radius: 5px;
+          width: 300px;
+          height: 280px;
         }
         
     }
@@ -795,7 +816,7 @@ main{
                 
                 .lg-software{
                     position: absolute;
-                    top: -45%;
+                    top: 0%;
                     left: 0%;
                     width: 100%;
                     height: 350px;
@@ -875,26 +896,686 @@ main{
     
 }
 
+
+
 .curso-expandido.comunicação-visual{
     background-color: #ffffff;
-    box-shadow: inset 0 0 0 25px #6f029b;
+        box-shadow: inset 50px 0 0 0 #59016b, inset -50px 0 0 0 #59016b,inset 0 30px 0 0 #59016b, inset 0 -30px 0 0 #59016b;
+        overflow: hidden;
+        
+    
+        .Cartão-Comunicacao_Visual{
+            width: 1200px;
+            height: 440px;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+    
+    
+            .h1-CV{
+                margin-top: 0px;
+                font-size: 20px;
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+                color: #a405c4;
+                
+            }
+    
+            .linha-CV{
+                height: 2px;
+                width: 1000px;
+                background-color: #7a0292;
+            }
+
+            .doisconteudos-CV{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+            }
+
+            .tudo-CV {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: linear-gradient(50deg, #FFFFFF 20%, hsl(293, 100%, 77%) 40%, #FFFFFF 90%);
+                border-radius: 10px;
+                transition: all 1s ease-in-out;
+                width: 600px;
+                height: 300px;
+                overflow: hidden;
+              }
+              
+              .tudo-CV h2{
+                position: absolute;
+                transition: all 1s ease-in-out;
+                font-size: 35px;
+              }
+              .tudo-CV .seta-3{
+                position: absolute;
+                transition: all 1s ease-in-out;
+                width: 30px;
+                height: 35px;
+                margin-top: 60px;
+              }
+              
+              .tudo-CV:hover h2,
+              .tudo-CV:hover .seta-3 {
+                opacity: 0;
+                visibility: hidden;
+              }
+              
+              .sobre-CV {
+                position: absolute;
+                z-index: 10;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 20px;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 1s ease-in-out;
+              }
+              
+              .tudo-CV:hover .sobre-CV {
+                opacity: 1;
+                visibility: visible;
+              }
+              
+            .img-CV img{
+                height: 320px;
+                width: 455px;
+                border-radius: 10px;
+                z-index: 10;
+            }
+            .text-CV p{
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 15px;
+                font-weight: 450;
+                 text-align: center;
+            }
+            .text-CV h1{
+                text-align: center;
+                font-family:Georgia, 'Times New Roman', Times, serif;
+                font-size: 25px;
+            }
+            .tópicos-CV li{
+                font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-size: 15px;
+                font-weight: 500;
+            }
+            .tópicos-CV h1{
+                text-align: center;
+                font-family:Georgia, 'Times New Roman', Times, serif;
+                font-size: 20px;
+            }
+
+            
+        }
 }
 .curso-expandido.administração{
     background-color: #ffffff;
-    box-shadow: inset 0 0 0 30px #eb710d;
+        box-shadow: inset 50px 0 0 0 #f08800, inset -50px 0 0 0 #f08800,inset 0 30px 0 0 #f08800, inset 0 -30px 0 0 #f08800;
+        overflow: hidden;
+        
+    
+        .Cartão-Administração{
+            width: 1200px;
+            height: 440px;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+
+            
+    
+    
+            .h1-Admin{
+                margin-top: 0px;
+                font-size: 20px;
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+                color: #ff9306;
+                
+            }
+    
+            .linha-Admin{
+                height: 2px;
+                width: 1000px;
+                background-color: #ff9306;
+            }
+
+            .doisconteudos-Admin{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+            }
+            .img-Admin img{
+                height: 320px;
+                width: 455px;
+                border-radius: 10px;
+                z-index: 10;
+            }
+
+            .tudo-Admin {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: linear-gradient(50deg, #FFFFFF 20%, hsl(36, 72%, 53%) 40%, #FFFFFF 90%);
+                border-radius: 10px;
+                transition: all 1s ease-in-out;
+                width: 600px;
+                height: 300px;
+                overflow: hidden;
+              }
+              
+              .tudo-Admin h2{
+                position: absolute;
+                transition: all 1s ease-in-out;
+                font-size: 35px;
+              }
+              .tudo-Admin .seta-3{
+                position: absolute;
+                transition: all 1s ease-in-out;
+                width: 30px;
+                height: 35px;
+                margin-top: 60px;
+              }
+              
+              .tudo-Admin:hover h2,
+              .tudo-Admin:hover .seta-3 {
+                opacity: 0;
+                visibility: hidden;
+              }
+              
+              .sobre-Admin {
+                position: absolute;
+                z-index: 10;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 20px;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 1s ease-in-out;
+              }
+              
+              .tudo-Admin:hover .sobre-Admin {
+                opacity: 1;
+                visibility: visible;
+              }
+              
+            .text-Admin p{
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 15px;
+                font-weight: 450;
+                 text-align: center;
+            }
+            .text-Admin h1{
+                text-align: center;
+                font-family:Georgia, 'Times New Roman', Times, serif;
+                font-size: 25px;
+            }
+            .tópicos-Admin li{
+                font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-size: 15px;
+                font-weight: 500;
+            }
+            .tópicos-Admin h1{
+                text-align: center;
+                font-family:Georgia, 'Times New Roman', Times, serif;
+                font-size: 20px;
+            }
+        }
 }
 .curso-expandido.eletromecânica{
     background-color: #ffffff;
-    box-shadow: inset 0 0 0 35px #000000;
+        box-shadow: inset 50px 0 0 0 #000000, inset -50px 0 0 0 #000000,inset 0 30px 0 0 #000000, inset 0 -30px 0 0 #000000;
+        overflow: hidden;
+        
+    
+        .Cartão-Eletromecânica{
+            width: 1200px;
+            height: 440px;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+    
+    
+            .h1-Eletro{
+                margin-top: 0px;
+                font-size: 20px;
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+                color: #252525;
+                
+            }
+    
+            .linha-Eletro{
+                height: 2px;
+                width: 1000px;
+                background-color: #000000;
+            }
+
+            .doisconteudos-Eletro{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+            }
+            .img-Eletro img{
+                height: 320px;
+                width: 455px;
+                border-radius: 10px;
+                z-index: 10;
+            }
+            .tudo-Eletro {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: linear-gradient(50deg, #FFFFFF 20%, hsl(0, 2%, 21%) 40%, #FFFFFF 90%);
+                border-radius: 10px;
+                transition: all 1s ease-in-out;
+                width: 600px;
+                height: 300px;
+                overflow: hidden;
+              }
+              
+              .tudo-Eletro h2{
+                position: absolute;
+                transition: all 1s ease-in-out;
+                font-size: 35px;
+              }
+              .tudo-Eletro .seta-3{
+                position: absolute;
+                transition: all 1s ease-in-out;
+                width: 30px;
+                height: 35px;
+                margin-top: 60px;
+              }
+              
+              .tudo-Eletro:hover h2,
+              .tudo-Eletro:hover .seta-3 {
+                opacity: 0;
+                visibility: hidden;
+              }
+              
+              .sobre-Eletro {
+                position: absolute;
+                z-index: 10;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 20px;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 1s ease-in-out;
+              }
+              
+              .tudo-Eletro:hover .sobre-Eletro {
+                opacity: 1;
+                visibility: visible;
+              }
+              
+            .text-Eletro p{
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 15px;
+                font-weight: 450;
+                 text-align: center;
+            }
+            .text-Eletro h1{
+                text-align: center;
+                font-family:Georgia, 'Times New Roman', Times, serif;
+                font-size: 25px;
+            }
+            .tópicos-Eletro li{
+                font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-size: 15px;
+                font-weight: 500;
+            }
+            .tópicos-Eletro h1{
+                text-align: center;
+                font-family:Georgia, 'Times New Roman', Times, serif;
+                font-size: 20px;
+            }
+        }
 }
 .curso-expandido.robótica{
     background-color: #ffffff;
-    box-shadow: inset 0 0 0 40px #029b87;
+    box-shadow: inset 50px 0 0 0 #014e1e, inset -50px 0 0 0 #014e1e, inset 0 30px 0 0 #014e1e, inset 0 -30px 0 0 #014e1e;
+    overflow: hidden;
+    
+
+    .Cartão-Robótica{
+        width: 1200px;
+        height: 440px;
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+
+
+        .h1-Robo{
+            margin-top: 0px;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            color: #07b64a;
+            
+        }
+
+        .linha-Robo{
+            height: 2px;
+            width: 1000px;
+            background-color: #018333;
+        }
+
+        .doisconteudos-Robo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .img-Robo img{
+            height: 320px;
+            width: 455px;
+            border-radius: 10px;
+            z-index: 10;
+        }
+        .tudo-Robo {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(50deg, #FFFFFF 20%, hsl(138, 59%, 45%) 40%, #FFFFFF 90%);
+            border-radius: 10px;
+            transition: all 1s ease-in-out;
+            width: 600px;
+            height: 300px;
+            overflow: hidden;
+          }
+          
+          .tudo-Robo h2{
+            position: absolute;
+            transition: all 1s ease-in-out;
+            font-size: 35px;
+          }
+          .tudo-Robo .seta-3{
+            position: absolute;
+            transition: all 1s ease-in-out;
+            width: 30px;
+            height: 35px;
+            margin-top: 60px;
+          }
+          
+          .tudo-Robo:hover h2,
+          .tudo-Robo:hover .seta-3 {
+            opacity: 0;
+            visibility: hidden;
+          }
+          
+          .sobre-Robo {
+            position: absolute;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 1s ease-in-out;
+          }
+          
+          .tudo-Robo:hover .sobre-Robo {
+            opacity: 1;
+            visibility: visible;
+          }
+          
+        .text-Robo p{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 15px;
+            font-weight: 450;
+             text-align: center;
+        }
+        .text-Robo h1{
+            text-align: center;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-size: 25px;
+        }
+        .tópicos-Robo li{
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .tópicos-Robo h1{
+            text-align: center;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-size: 20px;
+        }
+    }
 }
 .curso-expandido.inglês{
     background-color: #ffffff;
-    box-shadow: inset 0 0 0 45px #9b0202;
+    box-shadow: inset 50px 0 0 0 #940202, inset -50px 0 0 0 #940202,inset 0 30px 0 0 #940202, inset 0 -30px 0 0 #940202;
+    overflow: hidden;
+    
+
+    .Cartão-Inglês{
+        width: 1200px;
+        height: 440px;
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+
+
+        .h1-ing{
+            margin-top: 0px;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            color: #e20f0f;
+            
+        }
+
+        .linha-ing{
+            height: 2px;
+            width: 1000px;
+            background-color: #a80303;
+        }
+
+        .doisconteudos-ing{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .img-ing img{
+            height: 320px;
+            width: 455px;
+            border-radius: 10px;
+            z-index: 10;
+        }
+        .tudo-ing {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(50deg, #FFFFFF 20%, hsl(0, 77%, 50%) 40%, #FFFFFF 90%);
+            border-radius: 10px;
+            transition: all 1s ease-in-out;
+            width: 600px;
+            height: 300px;
+            overflow: hidden;
+          }
+          
+          .tudo-ing h2{
+            position: absolute;
+            transition: all 1s ease-in-out;
+            font-size: 35px;
+          }
+          .tudo-ing .seta-3{
+            position: absolute;
+            transition: all 1s ease-in-out;
+            width: 30px;
+            height: 35px;
+            margin-top: 60px;
+          }
+          
+          .tudo-ing:hover h2,
+          .tudo-ing:hover .seta-3 {
+            opacity: 0;
+            visibility: hidden;
+          }
+          
+          .sobre-ing {
+            position: absolute;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 1s ease-in-out;
+          }
+          
+          .tudo-ing:hover .sobre-ing {
+            opacity: 1;
+            visibility: visible;
+          }
+          
+        .text-ing p{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 15px;
+            font-weight: 450;
+             text-align: center;
+        }
+        .text-ing h1{
+            text-align: center;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-size: 25px;
+        }
+        .tópicos-ing li{
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            margin-left: 50px;
+        }
+        .tópicos-ing h1{
+            text-align: center;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-size: 20px;
+        }
+        
+    }
 }
+
+
+footer{
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(150deg, #e9eefc 20%, #98b2f8 40%, #6486d1, #476dbe 60%, #274ea1 80%, #153883 100%) ;
+    margin-top: 100px;
+    clip-path: ellipse(110% 100% at 50% 100%)
+
+    
+}
+
+.tudo-footer{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.patrocionadores{
+    position: absolute;
+    bottom: 7%;
+    left: 5%;
+    gap: 20px;
+
+    h1{
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 500;
+    }
+}
+
+.imgs-patro{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.imgs-patro img{
+    width: 80px;
+    height: 60px;
+}
+
+.patro-1{
+    display: flex;
+    gap: 15px;
+}
+.patro-2{
+    display: flex;
+    gap: 15px;
+}
+
+.Último{
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    color: #ffffff;
+    font-size: 40px;
+}
+
+.end-cont{
+    position: absolute;
+    left: 5%;
+    top: 20%;
+
+    .endereco p{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+        color: #072996;
+    }
+    .Link-endereco p{
+        text-decoration: none;
+        color: #072996;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+    }
+
+    .contato p{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+        color: #072996;
+    }
+}
+
 
 @media (max-width: 768px) {
     *{

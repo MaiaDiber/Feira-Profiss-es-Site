@@ -15,13 +15,15 @@ export default function Primeira() {
     return () => clearTimeout(timer);
   }, []);
     
-    // Estado para controlar qual curso está selecionado
+
     const [cursoSelecionado, setCursoSelecionado] = useState('');
   
-    // Criando as funções
+
     const handleSelecionarCurso = selecionarCurso(setCursoSelecionado);
     const handleVoltarInicio = voltarInicio(setCursoSelecionado);
 
+
+    {/* INFORMÁTICA */}
     const getCursoContent = (curso) => {
       switch (curso) {
         case 'Informática': 
@@ -70,7 +72,6 @@ export default function Primeira() {
                     <img className="seta-mouse2" src="ChatGPT Image 1 de set. de 2025, 21_41_56.png" alt="" />
                     </div>
                     <div className="lg-software">
-                      <h1>SOFTWARE</h1>
 
                       <div className="text-software">
                         <p>Software é a parte lógica do <br /> computador, formada 
@@ -118,11 +119,231 @@ export default function Primeira() {
           </section>
         );
 
+        {/* COMUNICAÇÃO VISUAL */}
+        case 'Comunicação Visual' :
+          return (
+            <section className="Cartão-Comunicacao_Visual">
+              <div className="h1-CV">
+              <h1>Comunicação Visual</h1>
+              <div className="linha-CV"></div>
+              </div>
+            <div className="doisconteudos-CV">
+              <div className="img-CV">
+              <img src="IMG_4805.jpg" alt="" />
+              </div>
+              
+              <div className="tudo-CV">
+                <h2>CV</h2>
+
+                <img className="seta-3" src="ChatGPT Image 1 de set. de 2025, 21_41_56.png" alt="" />
+
+              <div className="sobre-CV">
+                <div className="text-CV">
+                  <h1>O que é a Comunicação Visual?</h1>
+                  <p>É a área que transmite ideias e informações por meio de imagens, cores, tipografias e <br />
+                   símbolos. Está presente em logotipos, propagandas, embalagens, sites, redes sociais e <br /> materiais 
+                    impressos, unindo criatividade e tecnologia para comunicar de forma clara e atrativa.</p>
+                
+                  </div>
+                <div className="tópicos-CV">
+                  <h1>O que vai aprender?</h1>
+                  <ul>
+                    <li>Softwares de design <em>Photoshop, Illustrator, CorelDRAW, InDesign</em>;</li>
+                    <li>Edição de imagens e criação de layouts digitais;</li>
+                    <li>Desenho, teoria das cores e tipografia;</li>
+                    <li>Fotografia aplicada ao design;</li>
+                    <li>Produção gráfica impressa cartazes, panfletos, embalagens;</li>
+                    <li>Identidade visual e criação de logotipos;</li>
+                    <li>Desenvolvimento de projetos e portfólio profissional;</li>
+                  </ul>
+                
+                </div>
+              </div>
+              </div>
+              </div>
+            </section>
+          );
+
+          {/* ADMINISTRAÇÃO */}
+        case 'Administração' :
+          return (
+            <section className="Cartão-Administração">
+              <div className="h1-Admin">
+              <h1>Administração</h1>
+              <div className="linha-Admin"></div>
+              </div>
+            <div className="doisconteudos-Admin">
+              <div className="img-Admin">
+              <img src="IMG_4897.jpg" alt="" />
+              </div>
+              
+              <div className="tudo-Admin">
+                <h2>Admin</h2>
+
+                <img className="seta-3" src="ChatGPT Image 1 de set. de 2025, 21_41_56.png" alt="" />
+
+              <div className="sobre-Admin">
+                <div className="text-Admin">
+                  <h1>O que é a Administração?</h1>
+                  <p>A Administração é a área que ensina a gerenciar recursos humanos, financeiros <br />
+                   e materiais de empresas ou projetos, visando eficiência, produtividade e tomada <br />
+                    de decisões estratégicas.</p>
+                
+                  </div>
+                <div className="tópicos-Admin">
+                  <h1>O que vai aprender?</h1>
+                  <ul>
+                    <li>Fundamentos de gestão e planejamento estratégico;</li>
+                    <li>Administração financeira e controle de custos;</li>
+                    <li>Liderança, gestão de equipes e motivação;</li>
+                    <li>Marketing e vendas;</li>
+                    <li>Processos organizacionais e tomada de decisão;</li>
+                    <li>Ferramentas de produtividade e organização empresarial;</li>
+                    <li>Elaboração de relatórios e apresentações gerenciais;</li>
+                  </ul>
+                
+                </div>
+              </div>
+              </div>
+              </div>
+            </section>
+          );
+          {/* ELETROMECÂNICA */}
+        case 'Eletromecânica' :
+          return (
+            <section className="Cartão-Eletromecânica">
+              <div className="h1-Eletro">
+              <h1>Eletromecânica</h1>
+              <div className="linha-Eletro"></div>
+              </div>
+            <div className="doisconteudos-Eletro">
+              <div className="img-Eletro">
+              <img src="IMG_4761 (1).jpg" alt="" />
+              </div>
+              <div className="tudo-Eletro">
+                <h2>Eletro</h2>
+
+                <img className="seta-3" src="ChatGPT Image 1 de set. de 2025, 21_41_56.png" alt="" />
+
+              <div className="sobre-Eletro">
+                <div className="text-Eletro">
+                  <h1>O que é a Eletromecânica?</h1>
+                  <p>A Eletromecânica integra conhecimentos de mecânica e eletricidade, ensinando a construir, manter e reparar sistemas eletromecânicos em residências, indústrias <br /> e veículos.</p>
+                
+                  </div>
+                <div className="tópicos-Eletro">
+                  <h1>O que vai aprender?</h1>
+                  <ul>
+                    <li>Fundamentos de mecânica aplicada a robôs;</li>
+                    <li>Eletrônica básica e sensores;</li>
+                    <li>Programação de microcontroladores e robôs;</li>
+                    <li>Automação e controle de movimentos;</li>
+                    <li>Projetos de robôs móveis, manipuladores e autônomos;</li>
+                    <li>Integração de hardware e software;</li>
+                    <li>Desenvolvimento de protótipos funcionais e testes;</li>
+                  </ul>
+                
+                </div>
+              </div>
+              </div>
+              </div>
+            </section>
+          );
+          {/* ROBÓTICA */}
+        case 'Robótica' :
+          return (
+            <section className="Cartão-Robótica">
+              <div className="h1-Robo">
+              <h1>Robótica</h1>
+              <div className="linha-Robo"></div>
+              </div>
+            <div className="doisconteudos-Robo">
+              <div className="img-Robo">
+              <img src="FEI_2024_CEDESP16-_1_.jpg" alt="" />
+              </div>
+              <div className="tudo-Robo">
+                <h2>Robo</h2>
+
+                <img className="seta-3" src="ChatGPT Image 1 de set. de 2025, 21_41_56.png" alt="" />
+
+              <div className="sobre-Robo">
+                <div className="text-Robo">
+                  <h1>O que é a Robótica?</h1>
+                  <p>A Robótica envolve o estudo e a criação de robôs e sistemas automatizados, <br />
+                   combinando mecânica, eletrônica e programação para desenvolver soluções <br />
+                    tecnológicas.</p>
+                
+                  </div>
+                <div className="tópicos-Robo">
+                  <h1>O que vai aprender?</h1>
+                  <ul>
+                    <li>Conceitos básicos de eletricidade e segurança elétrica;</li>
+                    <li>Instalações elétricas residenciais (tomadas, interruptores, lâmpadas);</li>
+                    <li>Sistemas elétricos automotivos (bateria, alternador, iluminação);</li>
+                    <li>Motores e máquinas elétricas (CC e CA);</li>
+                    <li>Comandos elétricos e automação básica;</li>
+                    <li>Diagnóstico e manutenção de equipamentos eletromecânicos;</li>
+                    <li>Integração elétrica e mecânica em projetos práticos;</li>
+                  </ul>
+                
+                </div>
+              </div>
+              </div>
+              </div>
+            </section>
+          );
+          {/* INGLÊS */}
+        case 'Inglês' :
+          return (
+            <section className="Cartão-Inglês">
+              <div className="h1-ing">
+              <h1>Inglês</h1>
+              <div className="linha-ing"></div>
+              </div>
+            <div className="doisconteudos-ing">
+              <div className="img-ing">
+              <img src="IMG_4752.JPG" alt="" />
+              </div>
+              <div className="tudo-ing">
+                <h2>Inglês</h2>
+
+                <img className="seta-3" src="ChatGPT Image 1 de set. de 2025, 21_41_56.png" alt="" />
+
+              <div className="sobre-ing">
+                <div className="text-ing">
+                  <h1>O que é a Inglês?</h1>
+                  <p>O Inglês é a língua internacional de comunicação, negócios e tecnologia. O curso <br />
+                   ensina a compreender, falar, ler e escrever em inglês, preparando você para <br />  situações do cotidiano, trabalho, estudos e viagens com confiança e clareza.</p>
+                
+                  </div>
+                <div className="tópicos-ing">
+                  <h1>O que vai aprender?</h1>
+                  <ul>
+                    <li>Conversação em inglês para interações cotidianas e profissionais;</li>
+                    <li>Vocabulário amplo e contextualizado, incluindo negócios e tecnologia;</li>
+                    <li>Estrutura gramatical sólida, com foco em comunicação eficaz;</li>
+                    <li>Compreensão de textos, artigos, e materiais multimídia em inglês;</li>
+                    <li>Produção de textos e apresentações em inglês;</li>
+                    <li>Pronúncia e fluência para falar com naturalidade;</li>
+                    <li>Desenvolvimento da capacidade de se comunicar de forma confiante em diferentes contextos;</li>
+                  </ul>
+                
+                </div>
+              </div>
+              </div>
+              </div>
+            </section>
+          );
+         
+
         default: 
         return null;
       }
     };
+
+    
   
+
     return(
         <>
 
@@ -130,14 +351,14 @@ export default function Primeira() {
                 <section className="info-header">
                     <div className="underline-textos">
                     <div className="underline">
-                        <Link to={'/segunda'} className="argumentos">Andares</Link>
+                        <Link to={'/segunda'} className="argumentos">Contato</Link>
             
                     </div>
                     <div className="underline">
                     <Link to={'/segunda'} className="argumentos">Quem somos?</Link>
                     </div>
                     <div className="underline">
-                    <Link to={'/segunda'} className="argumentos">Fale Conosco</Link>
+                    <Link to={'/segunda'} className="argumentos">Imagens</Link>
                     </div>
                     </div>
 
@@ -145,7 +366,7 @@ export default function Primeira() {
                         <Link to={'/Login'} className="login">
                             <p>Login</p>
                         </Link>
-                        <Link to={'/Segunda'} className="cadastrar">
+                        <Link to={'/Cadastro'} className="cadastrar">
                             <p>Cadastrar</p>
                             <div className="left"></div>
                             <div className="right"></div>
@@ -273,7 +494,14 @@ export default function Primeira() {
       <div className="conteudo-area">
   {/* Vídeo */}
   <div className={`video ${cursoSelecionado ? 'oculto' : 'visivel'}`}>
-    <img src="https://images.icon-icons.com/936/PNG/512/play-button_icon-icons.com_73457.png" alt="" />
+    <div className="img-véio">
+    <img src="_MG_0398 editada (1).jpg" alt="" />
+    </div>
+    <div className="text-véio">
+    <h1>Bem-Vindo</h1>
+    <p>O Instituto Nossa Senhora de Fátima, localizado no extremo sul de São Paulo, é uma instituição dedicada à formação de jovens de baixa renda, oferecendo oportunidades de educação e qualificação profissional. Com um compromisso firme de inclusão social, o instituto oferece vários cursos, capacitando seus alunos para o mercado de trabalho. Ao longo dos anos, o Instituto tem se destacado por seu impacto transformador na vida de jovens, promovendo não apenas conhecimento técnico, mas também habilidades comportamentais, sociais e tecnológicas essenciais para o sucesso profissional.</p>
+    <p className="ggpp">font: acaonsfatima.org.br</p>
+    </div>
   </div>
   
   {/* Curso */}
@@ -286,6 +514,70 @@ export default function Primeira() {
 
     </section>
            </main>
+
+           <footer>
+            <section className="tudo-footer">
+
+             <div className="end-cont">
+              <div className="endereco">
+              <p>endereço: </p>
+             <Link className="Link-endereco" to={'https://www.google.com/maps/place/Instituto+Social+Nossa+Senhora+de+F%C3%A1tima/@-23.6803284,-46.7105058,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce502d2289a843:0x14406b17b30d0174!8m2!3d-23.6803333!4d-46.7079309!16s%2Fg%2F1ptxj22k2?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D'} >
+                <p>
+                Instituto Social Nossa Senhora de Fátima
+
+Av. Cel. Octaviano de Freitas Costa, <br/> 463 
+
+Veleiros - São Paulo - SP 04773-000</p>
+             </Link>
+              </div>
+              <div className="contato">
+                <p>contatos:</p>
+                <p>(11) 3798-5037 - secretaria</p>
+                <p>(11) 96398-6252 - secretaria - whatsapp</p>
+                <p>(11) 96398-6254 - encomendas da padaria do Frei - whatsapp</p>
+                <p>(11) 96398-6253 - CEDESP Ave Maria</p>
+                  <p>font:</p>
+                  <Link to="https://www.acaonsfatima.org.br/" >
+                    <p>acaonsfatima.org.br</p>
+                  </Link>
+              </div>
+             </div>
+             <div className="patrocionadores">
+
+              <h1>Apoio/Patrocionadores</h1>
+              <div className="imgs-patro">
+              <div className="patro-1">
+              <img src="BISCOITÊ-removebg-preview.png" alt="" />
+              <img src="patrocinador_espaço-forcione-removebg-preview.png" alt="" />
+              <img src="Logo_STB_-_Azul-removebg-preview.png" alt="" />
+              <img src="patrocinador_1-removebg-preview.png" alt="" />
+              <img src="prefeitura_são_paulo_assis_e_desenv_centralizado_1358260362-removebg-preview.png" alt="" />
+              <img src="patrocinador_mcs-removebg-preview.png" alt="" />
+              <img src="patrocinador_ICA-removebg-preview.png" alt="" />
+              <img src="patrocinador 3 VIAÇÃO GRAJAU QUALIDADE MELHOR.png" alt="" />
+              </div>
+              <div className="patro-2">
+              <img src="oticas-carol-site-removebg-preview.png" alt="" />
+              <img src="patrocinador rms.png" alt="" />
+              <img src="patrocinador 74265983_1120727043086044_7089293127499361057_n.jpg" alt="" />
+              <img src="patrocinador 2 LOGO BRUNO SILVA[1].png" alt="" />
+              <img src="voluntarios FM18_PT_VR.jpg" alt="" />
+              <img src="CASA DA MULHER PAULISTANA LOGO BRANCO PNG.png" alt="" />
+              <img src="CONEXÃO_BEM_MAIOR-removebg-preview.png" alt="" />
+              <img src="SÃO PAULO OPEN CENTRE.jpg" alt="" />
+              <img src="APS-removebg-preview.png" alt="" />
+              </div>
+              </div>
+             </div>
+
+             <div className="Último">
+              <div className="f"><h1>F</h1></div>
+              <div className="r"><h1>R</h1></div>
+              <div className="e"><h1>E</h1></div>
+              <div className="i"><h1>I</h1></div>
+             </div>
+            </section>
+           </footer>
         </>
     )
 }

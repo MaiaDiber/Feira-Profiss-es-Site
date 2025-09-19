@@ -1,10 +1,12 @@
-import React from "react";
 import { useEffect, useState } from "react";
-import slides from './scipts.js';
 import "./Login.scss";
 import { Link } from "react-router-dom";
 
 export default function Login() {
+  let [caixa, setCaixa] = useState()
+  let [email, setEmail] = useState()
+  let [senha, setSenha] = useState()
+
   useEffect(() => {
       const timer = setTimeout(() => {
         const startSlider = slides();
@@ -28,22 +30,22 @@ export default function Login() {
         <h1>Login</h1>
 
         <div className="input-group">
-            <h3>Nome</h3>
+            <h3>E-mail</h3>
 
             <label htmlFor="nome"></label>
-            <input type="text" id="nome" placeholder="Digite seu nome completo" />
+            <input type="text" id="nome" placeholder="Digite seu nome completo" value={email} onChange={(e) => setEmail(e.target.value)} />
         </div>
 
         <div className="input-group">
             <h3>Senha</h3>
 
             <label htmlFor="senha"></label>
-            <input type="password" id="senha" placeholder="Digite sua senha" />
+            <input type="password" id="senha" placeholder="Digite sua senha" value={senha} onChange={(e) => setSenha(e.target.value)} />
           
-            <a href="#" className="forgot-password">Esqueci a senha</a>
+           <Link className="EMS" to={'/Cadastro'} ><p>Esqueci minha senha</p></Link>
         </div>
 
-        <button className="cadastrar">Cadastrar</button>
+        <button className="cadastrar">Entrar</button>
       </div>
     </div>
     </>
