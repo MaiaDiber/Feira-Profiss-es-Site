@@ -1,17 +1,21 @@
 .login-page {
   min-height: 100vh;
-  background: linear-gradient(180deg, #3a9bdc 0%, #a3cdfd 100%);
+  background: linear-gradient(120deg,  #ffffff 0%, #0035a7 100%);
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 50px;
   font-family: Arial, Helvetica, sans-serif;
+
+  .img-frei img{
+    width: 130px;
+    height: 130px;
+  }
 }
 
-
-
-
-
 .login-container {
+  margin-top: -50px;
   position: relative;
   background-color: #e8fbff;
   width: 350px;
@@ -57,9 +61,12 @@
       
     }
 
-  .input-group {
+  form {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
+    gap: 15px;
     margin-bottom: 25px;
     position: relative;
     align-items: flex-start;
@@ -67,9 +74,9 @@
     width: 100%;
 
         h3{
-          margin-bottom: -3px;
-          font-weight: normal;
-          align-self: flex-start;
+          text-align: center;
+          margin-bottom: 3px;
+          font-weight: 100;
         }
 
         #nome, #senha{
@@ -78,6 +85,10 @@
         }
 
         label {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
             margin-bottom: 5px;
             text-align: left;
             font-weight: 500;
@@ -92,17 +103,21 @@
         }
 
         input {
-            padding: 10px 12px;
+            padding: 10px 150px 10px 20px;
             font-size: 14px;
             border: 1px solid #aaa;
             border-radius: 10px;
             outline: none;
             transition: border-color 0.3s;
-            width: 100%;
 
                 &:focus {
                     border-color: #3a9bdc;
                 }
+        }
+
+        input::placeholder{
+          font-style: italic;
+          font-size: 13px;
         }
 
     .forgot-password {
@@ -119,17 +134,18 @@
     }
   }
 
-  .cadastrar {
+  .entrar {
     background-color: #f8a700;
     border: none;
     color: #222;
     font-size: 16px;
-    padding: 10px 0;
-    width: 100%;
+    padding: 10px 100px 10px 100px;
     border-radius: 10px;
     cursor: pointer;
     font-weight: 500;
     transition: background-color 0.3s;
+    text-decoration: none;
+    margin: auto;
 
     &:hover {
       background-color: #e08c00;

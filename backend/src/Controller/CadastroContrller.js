@@ -3,19 +3,39 @@ import { Router } from "express";
 const endpointConta = Router()
 
 endpointConta.get('/Listar/Contas', async (req, resp) => {
-    
-    let contas = await ListarContas()
-    resp.send(contas)
+    try {
+        let contas = await ListarContas()
+        resp.send(contas)
+    } catch (error) {
+        console.error('Erro ao listar contas:', error);
+        resp.status(500).send({ erro: 'Erro interno do servidor' });
+    }
 })
 
 endpointConta.post('/Postar/Cadastro', async (req, resp) => {
-    let pegar = req.body
+    try {
+        let pegar = req.body
+        
+        // Validação básica
+        if (!pegar.nome_completo || !pegar.email || !pegar.cpf) {
+            return resp.status(400).send({ 
+                erro: 'Campos obrigatórios não preenchidos' 
+            });
+        }
 
-    let id = await CriarConta(pegar)
+        let resultado = await CriarConta(pegar)
 
-    resp.send({
-        novoID: id 
-    })
-} )
+        resp.send({
+            sucesso: true,
+            dados: resultado
+        })
+        
+    } catch (error) {
+        console.error('Erro ao criar conta:', error);
+        resp.status(400).send({ 
+            erro: error.message || 'Erro ao criar cadastro'
+        });
+    }
+})
 
 export default endpointConta

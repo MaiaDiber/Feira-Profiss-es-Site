@@ -2,10 +2,10 @@
 import { Link } from "react-router";
 import { useEffect, useState } from "react";
 import slides from './scipts.js'
-import "./Primeira.scss";
+import "./complementado.scss";
 import { cursos, selecionarCurso, voltarInicio } from "./cursos.js";
 
-export default function Primeira() {
+export default function Complemento() {
   useEffect(() => {
     const timer = setTimeout(() => {
       const startSlider = slides();
@@ -362,16 +362,13 @@ export default function Primeira() {
                     </div>
                     </div>
 
-                    <nav className="login-cadastrar">
-                        <Link to={'/Login'} className="login">
-                            <p>Login</p>
-                        </Link>
-                        <Link to={'/Cadastro'} className="cadastrar">
-                            <p>Cadastrar</p>
-                            <div className="left"></div>
-                            <div className="right"></div>
-                        </Link>
-                    </nav>
+                    <div className="img-central">
+                        <img src="21 de set. de 2025, 13_02_18.png" alt="" />
+                    </div>
+
+                    <div className="bem-vindo">
+                        <h1>Seja Bem-Vindo</h1>
+                    </div>
                 </section>
             </header>
 
