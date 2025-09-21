@@ -1,10 +1,28 @@
-import { CriarConta, ListarContas } from "../Repository/CadastroRepository.js";
+import { CriarConta, ListarContasCom, ListarContasInfo, ListarContasCada } from "../Repository/CadastroRepository.js";
 import { Router } from "express";
 const endpointConta = Router()
 
 endpointConta.get('/Listar/Contas', async (req, resp) => {
     try {
-        let contas = await ListarContas()
+        let contas = await ListarContasCom()
+        resp.send(contas)
+    } catch (error) {
+        console.error('Erro ao listar contas:', error);
+        resp.status(500).send({ erro: 'Erro interno do servidor' });
+    }
+})
+endpointConta.get('/Listar/Contas/Info', async (req, resp) => {
+    try {
+        let contas = await ListarContasInfo()
+        resp.send(contas)
+    } catch (error) {
+        console.error('Erro ao listar contas:', error);
+        resp.status(500).send({ erro: 'Erro interno do servidor' });
+    }
+})
+endpointConta.get('/Listar/Contas/Cada', async (req, resp) => {
+    try {
+        let contas = await ListarContasCada()
         resp.send(contas)
     } catch (error) {
         console.error('Erro ao listar contas:', error);

@@ -79,9 +79,35 @@ export async function CriarConta(dados) {
     }
 }
 
-export async function ListarContas() {
+export async function ListarContasCom() {
     try {
         const comando = `SELECT email, telefone
+                        FROM Comunicacao`;
+                        
+        let [listagem] = await connection.query(comando);
+        return listagem;
+        
+    } catch (error) {
+        console.error('Erro ao listar contas:', error);
+        throw new Error('Erro ao buscar contas');
+    }
+}
+export async function ListarContasInfo() {
+    try {
+        const comando = `SELECT *
+                        FROM Informacao`;
+                        
+        let [listagem] = await connection.query(comando);
+        return listagem;
+        
+    } catch (error) {
+        console.error('Erro ao listar contas:', error);
+        throw new Error('Erro ao buscar contas');
+    }
+}
+export async function ListarContasCada() {
+    try {
+        const comando = `SELECT Cadastrar
                         FROM Comunicacao`;
                         
         let [listagem] = await connection.query(comando);
